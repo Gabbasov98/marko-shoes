@@ -1,0 +1,325 @@
+p.error___p {
+	color:red!important;
+}
+
+.success___p {
+	color: green!important;
+}
+
+input.is___error, textarea.is___error {
+	border: 1px solid red!important;
+}
+
+.is___process {
+	opacity: 0.8!important;
+}
+
+
+.null___view {
+	width: 0!important;
+	height: 0!important;
+	margin: 0!important;
+	padding: 0!important;
+	opacity: 0!important;
+	visibility: hidden!important;
+}
+
+
+/* Запрет выделения */
+.lkShopEditTr, .lkMonitoringBookingTr {
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+}
+
+
+
+
+
+.select__list .select____item {
+	position: relative;
+	font-size: 14px;
+	font-weight: 600;
+	/* color: #A3ACC2; */
+	/* border-top: 1px solid #A3ACC2; */
+	padding: 5px 10px 5px 30px;
+	cursor: pointer;
+	list-style-type: none;
+}
+.select__list .select____item:hover {
+	background-color: #ee1c25;
+	color: #ffffff;
+}
+
+
+
+
+.moreProductReviewsBlock {
+	width:100%;
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.moreProductReviewsButton {
+	margin: 0 auto;
+}
+
+
+
+.sizeItem, .select .select__item {
+	-webkit-user-select: none;
+	/* Для Mozilla FireFox */
+	-moz-user-select: none;
+	/* Для Safari, Chrome */
+	-khtml-user-select: none;
+	/* Общее свойство */
+	user-select: none;
+}
+
+.shopsProcessBlock {
+	text-align: center;
+}
+
+.shopsErrorBlock {
+	text-align: center;
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+
+.shopsErrorBlock p {
+	font-style: italic;
+}
+
+
+.loadingLayer {
+	display: none;
+	text-align: center;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 4444;
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
+.loadingLayer img {
+	position: relative;
+	top: 35%;
+	width: 150px;
+}
+
+.checkbox + label:before {
+	display: inline-block;
+}
+
+
+.lkShopPaginationBlock{
+	-webkit-user-select: none;
+	/* Для Mozilla FireFox */
+	-moz-user-select: none;
+	/* Для Safari, Chrome */
+	-khtml-user-select: none;
+	/* Общее свойство */
+	user-select: none;
+}
+
+
+.not_found_page {
+	margin-bottom: 40px;
+}
+
+
+
+.shop__tab__wrapper h2 a.active_link {
+	color: #ee1c25;
+	text-decoration: underline;
+}
+
+
+.shopsModsBlock .color-box__item.inactive {
+	opacity: 0.4;
+}
+
+
+
+.catalog_descr_text {
+	margin: 0 0 70px 0;
+}
+
+.catalog_descr_text p {
+	margin-bottom: 1rem;
+	text-align: justify;
+}
+
+@media ( max-width: 530px ){
+	.main_page__prod_item .button_ghost-red {
+		display:none;
+	}
+}
+
+
+
+
+
+.section-insta {
+	text-align: center;
+	margin-bottom: 45px
+}
+
+@media (min-width: 768px) {
+	.section-insta {
+		margin-bottom:75px
+	}
+}
+
+@media (min-width: 1366px) {
+	.section-insta {
+		padding-top:60px;
+		padding-bottom: 60px;
+		margin-bottom: 0
+	}
+}
+
+@media (min-width: 1600px) {
+	.section-insta {
+		padding-left:40px;
+		padding-right: 40px;
+		background-color: #fff
+	}
+}
+
+.section-insta__photos {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 2px;
+	margin-top: 22px
+}
+
+@media (min-width: 640px) {
+	.section-insta__photos {
+		margin-top:30px
+	}
+}
+
+@media (min-width: 1366px) {
+	.section-insta__photos {
+		grid-template-columns:repeat(4, 1fr)
+	}
+}
+
+.section-insta__link {
+	position: relative
+}
+
+.section-insta__link:hover:after {
+	opacity: 1
+}
+
+.section-insta__link:hover .section-insta__likes {
+	opacity: 1;
+	visibility: visible
+}
+
+.section-insta__link:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.3);
+	z-index: 1;
+	opacity: 0;
+	-webkit-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s
+}
+
+.section-insta__link:first-child {
+	grid-column: 1/3;
+	grid-row: 1/3
+}
+
+@media (max-width: 1365px) {
+	.section-insta__link:nth-child(3),.section-insta__link:nth-child(5),.section-insta__link:nth-child(9) {
+		display:none
+	}
+}
+
+.section-insta__link>img {
+	width: 100%
+}
+
+.section-insta__link--video:before {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 17%;
+	height: 17%;
+	background-color: #333333;
+	background-image: url("../images/example/soc/play.svg");
+	background-position: 45% 45%;
+	background-repeat: no-repeat;
+	background-size: 42%;
+	-webkit-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s
+}
+
+.section-insta__link--video:hover:before {
+	background-color: #0099ba
+}
+
+.section-insta__title {
+	text-transform: none;
+	padding: 0;
+	margin-bottom: 0
+}
+
+.section-insta__likes {
+	position: absolute;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
+	bottom: 5px;
+	color: #fff;
+	opacity: 0;
+	visibility: hidden;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
+	z-index: 2
+}
+
+.section-insta__likes>.icon {
+	margin-right: 8px;
+	margin-top: -4px
+}
+
+@media (min-width: 768px) {
+	.section-insta__likes {
+		font-size:16px;
+		bottom: 20px
+	}
+
+	.section-insta__likes>.icon {
+		font-size: 20px
+	}
+}
+
+
+

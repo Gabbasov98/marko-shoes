@@ -1,0 +1,3066 @@
+<!DOCTYPE html>
+<html class="js no-touchevents" lang="ru" style="">
+<div id="in-page-channel-node-id" data-channel-name="in_page_channel_63htWp"></div><!--<![endif]-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>История заказов</title>
+    <!--Mobile optimized-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <!--<meta name="viewport" content="width=1024, initial-scale=1.0">-->
+    <!--Theme color-->
+    <meta name="theme-color" content="#ee1c25">
+    <!--SEO-->
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=9133eb49-3a97-4b2d-90be-6b80a97a5036" type="text/javascript"></script>
+    <meta name="yandex-verification" content="9dac3d97390c80f5">
+    <script src="js/jquery.min.js" data-skip-moving="true"></script>
+    <script src="js/jquery.cookie.js" data-skip-moving="true"></script>
+    <script src="js/modernizr.min.js" data-skip-moving="true"></script>
+    <script src="js/vue.global.js" data-skip-moving="true"></script>
+
+    <script data-skip-moving="true">
+        var filterInterval;
+        var isClearFilter = false;
+        var filterTrees = [];
+        const catalogSortList = {
+            "new": {
+                "name": "\u0421\u043d\u0430\u0447\u0430\u043b\u0430 \u043d\u043e\u0432\u0438\u043d\u043a\u0438",
+                "code": "new",
+                "field": "PROPERTY_NOVINKA",
+                "order": "DESC"
+            },
+            "default": {
+                "name": "\u0421\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430 \u043f\u043e \u0443\u043c\u043e\u043b\u0447\u0430\u043d\u0438\u044e",
+                "code": "default",
+                "field": "PROPERTY_KOD_SORTIROVKI_PO_UMOLCHANIYU",
+                "order": "ASC"
+            },
+            "popular": {
+                "name": "\u0421\u043d\u0430\u0447\u0430\u043b\u0430 \u043f\u043e\u043f\u0443\u043b\u044f\u0440\u043d\u044b\u0435",
+                "code": "popular",
+                "field": "PROPERTY_REYTING",
+                "order": "DESC"
+            },
+            "price_asc": {
+                "name": "\u0426\u0435\u043d\u0430 \u2191",
+                "code": "price_asc",
+                "field": "CATALOG_PRICE_3",
+                "order": "ASC"
+            },
+            "price_desc": {
+                "name": "\u0426\u0435\u043d\u0430 \u2193",
+                "code": "price_desc",
+                "field": "CATALOG_PRICE_3",
+                "order": "DESC"
+            },
+            "discount_desc": {
+                "name": "\u0421\u043a\u0438\u0434\u043a\u0430 \u2193",
+                "code": "discount_desc",
+                "field": "PROPERTY_PROTSENT_SKIDKI",
+                "order": "DESC"
+            }
+        };
+        var catalogSort = {
+            "name": "\u0421\u043d\u0430\u0447\u0430\u043b\u0430 \u043d\u043e\u0432\u0438\u043d\u043a\u0438",
+            "code": "new",
+            "field": "PROPERTY_NOVINKA",
+            "order": "DESC"
+        };
+        var catalog_list_count = 36;
+        var search_list_count = 36;
+        var curURL = "/";
+        const minPassLengthNum = 6;
+        const minPassLength = "6 символов";
+        var catalog_page_number = 1;
+        var search_page_number = 1;
+        var articles_page_number = 1;
+        var shopsMap = null,
+            shopsMapClusterer = null,
+            shopsArPoints = [],
+            shopsPlacemarks = [];
+        const captchaPubKey = 'ysc1_m0LUUVKdRiWYl7k1oovvGurlE1TnMakZTGswz56Yfb5fdb04';
+        var registerSendType = null;
+    </script>
+
+    <script>
+        $.removeCookie('BITRIX_SM_openedNoAuthBookingPopup', {
+            path: '/'
+        });
+        $.removeCookie('BITRIX_SM_lastBookingPopupParams', {
+            path: '/'
+        });
+    </script>
+
+
+    <script type="text/javascript" data-skip-moving="true">
+        ! function() {
+            var t = document.createElement("script");
+            t.type = "text/javascript", t.async = !0, t.src = 'https://vk.com/js/api/openapi.js?173', t.onload = function() {
+                VK.Retargeting.Init("VK-RTRG-1933760-4Cxqm"), VK.Retargeting.Hit()
+            }, document.head.appendChild(t)
+        }();
+    </script>
+    <script type="text/javascript" async="" src="./Белорусская обувь Марко _ Каталог обуви на официальном сайте _ Забронировать качественную и удобную обувь_files/openapi.js.Без названия"></script><noscript><img src="https://vk.com/rtrg?p=VK-RTRG-1933760-4Cxqm" style="position:fixed; left:-999px;" alt="" /></noscript>
+
+
+    <meta name="keywords" content="Женская обувь, мужская обувь, каталог обуви, туфли, кроссовки, полуботинки, ботинки">
+    <meta name="description" content="Купить обувь в Астрахани, Белгороде, Великом Новгороде, Волгограде, Вологде, Воронеже, Иваново, Йошкар-Оле, Калуге, Краснодаре, Курске, Нижнем Новгороде, Пензе, Пскове, Ростове-на-Дону, Рыбинске, Рязани, Самаре, Саранске, Саратове, Ставрополе, Тамбове, Туле, Уфе">
+    <link href="css/ui.design-tokens.css" type="text/css" rel="stylesheet">
+    <link href="css/ui.font.opensans.css" type="text/css" rel="stylesheet">
+    <link href="css/main.popup.bundle.css" type="text/css" rel="stylesheet">
+    <link href="css/style-old.css" type="text/css" rel="stylesheet">
+    <link href="css/style-old.min.css" type="text/css" data-template-style="true" rel="stylesheet">
+    <link href="css/font-awesome.min.css" type="text/css" data-template-style="true" rel="stylesheet">
+    <link href="css/fonts.css" type="text/css" data-template-style="true" rel="stylesheet">
+    <link href="css/libs.min.css" type="text/css" data-template-style="true" rel="stylesheet">
+    <link href="css/main.css" type="text/css" data-template-style="true" rel="stylesheet">
+    <link href="css/header.css" type="text/css" data-template-style="true" rel="stylesheet">
+    <link href="css/custom.css" type="text/css" data-template-style="true" rel="stylesheet">
+    <link href="css/my.css" type="text/css" data-template-style="true" rel="stylesheet">
+    <link href="css/buttons.css" type="text/css" data-template-style="true" rel="stylesheet">
+
+    <link href="css/nice-select.css" type="text/css" data-template-style="true" rel="stylesheet">
+    <link href="css/air-datepicker.css" type="text/css" data-template-style="true" rel="stylesheet">
+    <link href="css/swiper-bundle.min.css" type="text/css" data-template-style="true" rel="stylesheet">
+    <link href="css/fancybox.css" type="text/css" data-template-style="true" rel="stylesheet">
+    <link href="css/style.min.css" type="text/css" data-template-style="true" rel="stylesheet">
+
+
+
+    <style>
+        @keyframes slide-in-one-tap {
+            from {
+                transform: translateY(80px);
+            }
+
+            to {
+                transform: translateY(0px);
+            }
+        }
+
+        .trust-hide-gracefully {
+            opacity: 0;
+        }
+
+        .trust-wallet-one-tap .hidden {
+            display: none;
+        }
+
+        .trust-wallet-one-tap .semibold {
+            font-weight: 500;
+        }
+
+        .trust-wallet-one-tap .binance-plex {
+            font-family: 'Binance';
+        }
+
+        .trust-wallet-one-tap .rounded-full {
+            border-radius: 50%;
+        }
+
+        .trust-wallet-one-tap .flex {
+            display: flex;
+        }
+
+        .trust-wallet-one-tap .flex-col {
+            flex-direction: column;
+        }
+
+        .trust-wallet-one-tap .items-center {
+            align-items: center;
+        }
+
+        .trust-wallet-one-tap .space-between {
+            justify-content: space-between;
+        }
+
+        .trust-wallet-one-tap .justify-center {
+            justify-content: center;
+        }
+
+        .trust-wallet-one-tap .w-full {
+            width: 100%;
+        }
+
+        .trust-wallet-one-tap .box {
+            transition: all 0.5s cubic-bezier(0, 0, 0, 1.43);
+            animation: slide-in-one-tap 0.5s cubic-bezier(0, 0, 0, 1.43);
+            width: 384px;
+            border-radius: 15px;
+            background: #FFF;
+            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            z-index: 1020;
+        }
+
+        .trust-wallet-one-tap .header {
+            gap: 15px;
+            border-bottom: 1px solid #E6E6E6;
+            padding: 10px 18px;
+        }
+
+        .trust-wallet-one-tap .header .left-items {
+            gap: 15px
+        }
+
+        .trust-wallet-one-tap .header .title {
+            color: #1E2329;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 28px;
+        }
+
+        .trust-wallet-one-tap .header .subtitle {
+            color: #474D57;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        .trust-wallet-one-tap .header .close {
+            color: #1E2329;
+            cursor: pointer;
+        }
+
+        .trust-wallet-one-tap .body {
+            padding: 9px 18px;
+            gap: 10px;
+
+        }
+
+        .trust-wallet-one-tap .body .right-items {
+            gap: 10px;
+            width: 100%;
+        }
+
+        .trust-wallet-one-tap .body .right-items .wallet-title {
+            color: #1E2329;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 20px;
+        }
+
+        .trust-wallet-one-tap .body .right-items .wallet-subtitle {
+            color: #474D57;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        .trust-wallet-one-tap .connect-indicator {
+            gap: 15px;
+            padding: 8px 0;
+        }
+
+        .trust-wallet-one-tap .connect-indicator .flow-icon {
+            color: #474D57;
+        }
+
+        .trust-wallet-one-tap .loading-color {
+            color: #FFF;
+        }
+
+        .trust-wallet-one-tap .button {
+            border-radius: 50px;
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+            background-color: rgb(5, 0, 255);
+            border-color: rgb(229, 231, 235);
+            cursor: pointer;
+            text-align: center;
+            height: 45px;
+        }
+
+        .trust-wallet-one-tap .button .button-text {
+            color: #FFF;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 20px;
+        }
+
+        .trust-wallet-one-tap .footer {
+            margin: 20px 30px;
+        }
+
+        .trust-wallet-one-tap .check-icon {
+            color: #FFF;
+        }
+
+        @font-face {
+            font-family: 'Binance';
+            src: url(chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/fonts/BinancePlex-Regular.otf) format('opentype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Binance';
+            src: url(chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/fonts/BinancePlex-Medium.otf) format('opentype');
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Binance';
+            src: url(chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/fonts/BinancePlex-SemiBold.otf) format('opentype');
+            font-weight: 600;
+            font-style: normal;
+        }
+    </style>
+    <style id="cc--style" type="text/css">
+        :root {
+            --cc-bg: #fff;
+            --cc-text: #4c4c4c;
+            --cc-btn-primary-bg: #ee1c25;
+            --cc-btn-primary-text: var(--cc-bg);
+            --cc-btn-primary-hover-bg: #49a867;
+            --cc-btn-secondary-bg: #eaeff2;
+            --cc-btn-secondary-text: var(--cc-text);
+            --cc-btn-secondary-hover-bg: #d8e0e6;
+            --cc-toggle-bg-off: #919ea6;
+            --cc-toggle-bg-on: var(--cc-btn-primary-bg);
+            --cc-toggle-bg-readonly: #d5dee2;
+            --cc-toggle-knob-bg: #fff;
+            --cc-toggle-knob-icon-color: #ecf2fa;
+            --cc-block-text: var(--cc-text);
+            --cc-cookie-category-block-bg: #f0f4f7;
+            --cc-cookie-category-block-bg-hover: #e9eff4;
+            --cc-section-border: #f1f3f5;
+            --cc-cookie-table-border: #e9edf2;
+            --cc-overlay-bg: rgba(4, 6, 8, .85);
+            --cc-webkit-scrollbar-bg: #cfd5db;
+            --cc-webkit-scrollbar-bg-hover: #9199a0
+        }
+
+        .c_darkmode {
+            --cc-bg: #181b1d;
+            --cc-text: #d8e5ea;
+            --cc-btn-primary-bg: #a6c4dd;
+            --cc-btn-primary-text: #000;
+            --cc-btn-primary-hover-bg: #c2dff7;
+            --cc-btn-secondary-bg: #33383c;
+            --cc-btn-secondary-text: var(--cc-text);
+            --cc-btn-secondary-hover-bg: #3e454a;
+            --cc-toggle-bg-off: #667481;
+            --cc-toggle-bg-on: var(--cc-btn-primary-bg);
+            --cc-toggle-bg-readonly: #454c54;
+            --cc-toggle-knob-bg: var(--cc-cookie-category-block-bg);
+            --cc-toggle-knob-icon-color: var(--cc-bg);
+            --cc-block-text: #b3bfc5;
+            --cc-cookie-category-block-bg: #23272a;
+            --cc-cookie-category-block-bg-hover: #2b3035;
+            --cc-section-border: #292d31;
+            --cc-cookie-table-border: #2b3035;
+            --cc-webkit-scrollbar-bg: #667481;
+            --cc-webkit-scrollbar-bg-hover: #9199a0
+        }
+
+        .cc_div *,
+        .cc_div :after,
+        .cc_div :before {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            float: none;
+            font-style: inherit;
+            font-variant: normal;
+            font-weight: inherit;
+            font-family: inherit;
+            line-height: 1.2;
+            font-size: 1em;
+            transition: none;
+            animation: none;
+            margin: 0;
+            padding: 0;
+            text-transform: none;
+            letter-spacing: unset;
+            color: inherit;
+            background: 0 0;
+            border: none;
+            box-shadow: none;
+            text-decoration: none;
+            text-align: left;
+            visibility: unset
+        }
+
+        .cc_div {
+            font-size: 16px;
+            font-weight: 400;
+            font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Helvetica, Arial, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            color: #2d4156;
+            color: var(--cc-text)
+        }
+
+        #c-ttl,
+        #s-bl td:before,
+        #s-ttl,
+        .cc_div .b-tl,
+        .cc_div .c-bn {
+            font-weight: 600
+        }
+
+        #cm,
+        #s-bl .act .b-acc,
+        #s-inr,
+        .cc_div .b-tl,
+        .cc_div .c-bl {
+            border-radius: .35em
+        }
+
+        .cc_div a,
+        .cc_div button,
+        .cc_div input {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none
+        }
+
+        .cc_div a {
+            border-bottom: 1px solid
+        }
+
+        .cc_div a:hover {
+            text-decoration: none;
+            border-color: transparent
+        }
+
+        #cm-ov,
+        #cs-ov,
+        .c--anim #cm,
+        .c--anim #s-cnt,
+        .c--anim #s-inr {
+            transition: visibility .25s linear, opacity .25s ease, transform .25s ease !important
+        }
+
+        .c--anim .c-bn {
+            transition: background-color .25s ease !important
+        }
+
+        .c--anim #cm.bar.slide,
+        .c--anim .bar.slide #s-inr {
+            transition: visibility .4s ease, opacity .4s ease, transform .4s ease !important
+        }
+
+        .c--anim #cm.bar.slide+#cm-ov,
+        .c--anim .bar.slide+#cs-ov {
+            transition: visibility .4s ease, opacity .4s ease, transform .4s ease !important
+        }
+
+        #cm.bar.slide,
+        .cc_div .bar.slide #s-inr {
+            transform: translateX(100%);
+            opacity: 1
+        }
+
+        #cm.bar.top.slide,
+        .cc_div .bar.left.slide #s-inr {
+            transform: translateX(-100%);
+            opacity: 1
+        }
+
+        #cm.slide,
+        .cc_div .slide #s-inr {
+            transform: translateY(1.6em)
+        }
+
+        #cm.top.slide {
+            transform: translateY(-1.6em)
+        }
+
+        #cm.bar.slide {
+            transform: translateY(100%)
+        }
+
+        #cm.bar.top.slide {
+            transform: translateY(-100%)
+        }
+
+        .show--consent .c--anim #cm,
+        .show--consent .c--anim #cm.bar,
+        .show--settings .c--anim #s-inr,
+        .show--settings .c--anim .bar.slide #s-inr {
+            opacity: 1;
+            transform: scale(1);
+            visibility: visible !important
+        }
+
+        .force--consent.show--consent .c--anim #cm.box.middle,
+        .force--consent.show--consent .c--anim #cm.cloud.middle {
+            transform: scale(1) translateY(-50%)
+        }
+
+        .show--settings .c--anim #s-cnt {
+            visibility: visible !important
+        }
+
+        .force--consent.show--consent .c--anim #cm-ov,
+        .show--settings .c--anim #cs-ov {
+            visibility: visible !important;
+            opacity: 1 !important
+        }
+
+        #cm {
+            font-family: inherit;
+            padding: 1.1em 1.8em 1.4em;
+            position: fixed;
+            z-index: 1;
+            background: #fff;
+            background: var(--cc-bg);
+            max-width: 24.2em;
+            width: 100%;
+            bottom: 1.25em;
+            right: 1.25em;
+            box-shadow: 0 .625em 1.875em #000;
+            box-shadow: 0 .625em 1.875em rgba(2, 2, 3, .28);
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(.95);
+            line-height: initial
+        }
+
+        #c-ttl {
+            margin-bottom: .7em;
+            font-size: 1.05em
+        }
+
+        .cloud #c-ttl {
+            margin-top: -.15em
+        }
+
+        #c-txt {
+            margin-bottom: 1.4em;
+            font-size: .9em;
+            line-height: 1.5em
+        }
+
+        .cc_div .c-bn {
+            color: #40505a;
+            color: var(--cc-btn-secondary-text);
+            background: #e5ebef;
+            background: var(--cc-btn-secondary-bg);
+            padding: 1em 1.7em;
+            display: inline-block;
+            cursor: pointer;
+            font-size: .82em;
+            -moz-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+            text-align: center;
+            border-radius: 4px
+        }
+
+        #cm .c-bn {
+            width: 48.5%
+        }
+
+        #c-bns button+button,
+        #s-c-bn,
+        #s-cnt button+button {
+            float: right
+        }
+
+        #s-cnt #s-rall-bn {
+            float: none;
+            margin-left: 1em
+        }
+
+        #cm .c_link:active,
+        #cm .c_link:hover,
+        #s-c-bn:active,
+        #s-c-bn:hover,
+        #s-cnt button+button:active,
+        #s-cnt button+button:hover {
+            background: #d8e0e6;
+            background: var(--cc-btn-secondary-hover-bg)
+        }
+
+        #s-cnt {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 101;
+            display: table;
+            height: 100%;
+            visibility: hidden
+        }
+
+        #s-bl {
+            outline: 0
+        }
+
+        #s-bl .title {
+            margin-top: 1.4em
+        }
+
+        #s-bl .title:first-child {
+            margin-top: 0
+        }
+
+        #s-bl .b-bn {
+            margin-top: 0
+        }
+
+        #s-bl .b-acc .p {
+            margin-top: 0;
+            padding: 1em
+        }
+
+        #s-cnt .b-bn .b-tl {
+            display: block;
+            font-family: inherit;
+            font-size: .95em;
+            width: 100%;
+            cursor: pointer;
+            position: relative;
+            padding: 1.3em 6.4em 1.3em 2.7em;
+            background: 0 0;
+            transition: background-color .25s ease
+        }
+
+        #s-cnt .act .b-bn .b-tl {
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0
+        }
+
+        #s-cnt .b-bn .b-tl:active,
+        #s-cnt .b-bn .b-tl:hover {
+            background: #e9eff4;
+            background: var(--cc-cookie-category-block-bg-hover)
+        }
+
+        #s-bl .b-bn {
+            position: relative
+        }
+
+        #s-bl .c-bl {
+            padding: 1em;
+            margin-bottom: .5em;
+            border: 1px solid #f1f3f5;
+            border-color: var(--cc-section-border);
+            transition: background-color .25s ease
+        }
+
+        #s-bl .c-bl:hover {
+            background: #f0f4f7;
+            background: var(--cc-cookie-category-block-bg)
+        }
+
+        #s-bl .c-bl:last-child {
+            margin-bottom: .5em
+        }
+
+        #s-bl .c-bl:first-child {
+            transition: none;
+            padding: 0;
+            margin-top: 0;
+            border: none;
+            margin-bottom: 2em
+        }
+
+        #s-bl .c-bl:not(.b-ex):first-child:hover {
+            background: 0 0;
+            background: unset
+        }
+
+        #s-bl .c-bl.b-ex {
+            padding: 0;
+            border: none;
+            background: #f0f4f7;
+            background: var(--cc-cookie-category-block-bg);
+            transition: none
+        }
+
+        #s-bl .c-bl.b-ex+.c-bl {
+            margin-top: 2em
+        }
+
+        #s-bl .c-bl.b-ex+.c-bl.b-ex {
+            margin-top: 0
+        }
+
+        #s-bl .c-bl.b-ex:first-child {
+            margin-bottom: 1em
+        }
+
+        #s-bl .c-bl.b-ex:first-child {
+            margin-bottom: .5em
+        }
+
+        #s-bl .b-acc {
+            max-height: 0;
+            overflow: hidden;
+            padding-top: 0;
+            margin-bottom: 0;
+            display: none
+        }
+
+        #s-bl .act .b-acc {
+            max-height: 100%;
+            display: block;
+            overflow: hidden
+        }
+
+        #s-cnt .p {
+            font-size: .9em;
+            line-height: 1.5em;
+            margin-top: .85em;
+            color: #2d4156;
+            color: var(--cc-block-text)
+        }
+
+        .cc_div .b-tg .c-tgl:disabled {
+            cursor: not-allowed
+        }
+
+        #c-vln {
+            display: table-cell;
+            vertical-align: middle;
+            position: relative
+        }
+
+        #cs {
+            padding: 0 1.7em;
+            width: 100%;
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            height: 100%
+        }
+
+        #s-inr {
+            height: 100%;
+            position: relative;
+            max-width: 45em;
+            margin: 0 auto;
+            transform: scale(.96);
+            opacity: 0;
+            padding-top: 4.75em;
+            padding-bottom: 4.75em;
+            position: relative;
+            height: 100%;
+            overflow: hidden;
+            visibility: hidden;
+            box-shadow: rgba(3, 6, 9, .26) 0 13px 27px -5px
+        }
+
+        #s-bns,
+        #s-hdr,
+        #s-inr {
+            background: #fff;
+            background: var(--cc-bg)
+        }
+
+        #s-bl {
+            overflow-y: auto;
+            overflow-y: overlay;
+            overflow-x: hidden;
+            height: 100%;
+            padding: 1.3em 2.1em;
+            display: block;
+            width: 100%
+        }
+
+        #s-bns {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1em 2.1em;
+            border-top: 1px solid #f1f3f5;
+            border-color: var(--cc-section-border);
+            height: 4.75em
+        }
+
+        .cc_div .cc-link {
+            color: #253b48;
+            color: var(--cc-btn-primary-bg);
+            border-bottom: 1px solid #253b48;
+            border-color: var(--cc-btn-primary-bg);
+            display: inline;
+            padding-bottom: 0;
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: 600
+        }
+
+        .cc_div .cc-link:active,
+        .cc_div .cc-link:hover {
+            border-color: transparent
+        }
+
+        #c-bns button:first-child,
+        #s-bns button:first-child {
+            color: #fff;
+            color: var(--cc-btn-primary-text);
+            background: #253b48;
+            background: var(--cc-btn-primary-bg)
+        }
+
+        .cc_div .b-tg .c-tgl:checked~.c-tg {
+            background: #253b48;
+            background: var(--cc-toggle-bg-on)
+        }
+
+        #c-bns button:first-child:active,
+        #c-bns button:first-child:hover,
+        #s-bns button:first-child:active,
+        #s-bns button:first-child:hover {
+            background: #1d2e38;
+            background: var(--cc-btn-primary-hover-bg)
+        }
+
+        #s-hdr {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            display: table;
+            padding: 0 2.1em;
+            height: 4.75em;
+            vertical-align: middle;
+            z-index: 2;
+            border-bottom: 1px solid #f1f3f5;
+            border-color: var(--cc-section-border)
+        }
+
+        #s-ttl {
+            display: table-cell;
+            vertical-align: middle;
+            font-size: 1em
+        }
+
+        #s-c-bn {
+            padding: 0;
+            width: 1.7em;
+            height: 1.7em;
+            font-size: 1.45em;
+            margin: 0;
+            font-weight: initial;
+            position: relative
+        }
+
+        #s-c-bnc {
+            display: table-cell;
+            vertical-align: middle
+        }
+
+        .cc_div span.t-lb {
+            position: absolute;
+            top: 0;
+            z-index: -1;
+            opacity: 0;
+            pointer-events: none;
+            overflow: hidden
+        }
+
+        #c_policy__text {
+            height: 31.25em;
+            overflow-y: auto;
+            margin-top: 1.25em
+        }
+
+        #c-s-in {
+            position: relative;
+            transform: translateY(-50%);
+            top: 50%;
+            height: 100%;
+            height: calc(100% - 2.5em);
+            max-height: 37.5em
+        }
+
+        @media screen and (min-width:688px) {
+            #s-bl::-webkit-scrollbar {
+                width: .9em;
+                height: 100%;
+                background: 0 0;
+                border-radius: 0 .25em .25em 0
+            }
+
+            #s-bl::-webkit-scrollbar-thumb {
+                border: .25em solid var(--cc-bg);
+                background: #cfd5db;
+                background: var(--cc-webkit-scrollbar-bg);
+                border-radius: 100em
+            }
+
+            #s-bl::-webkit-scrollbar-thumb:hover {
+                background: #9199a0;
+                background: var(--cc-webkit-scrollbar-bg-hover)
+            }
+
+            #s-bl::-webkit-scrollbar-button {
+                width: 10px;
+                height: 5px
+            }
+        }
+
+        .cc_div .b-tg {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            display: inline-block;
+            margin: auto;
+            right: 1.2em;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            vertical-align: middle
+        }
+
+        .cc_div .b-tg .c-tgl {
+            position: absolute;
+            cursor: pointer;
+            display: block;
+            top: 0;
+            left: 0;
+            margin: 0;
+            border: 0
+        }
+
+        .cc_div .b-tg .c-tg {
+            position: absolute;
+            background: #919ea6;
+            background: var(--cc-toggle-bg-off);
+            transition: background-color .25s ease, box-shadow .25s ease;
+            pointer-events: none
+        }
+
+        .cc_div .b-tg,
+        .cc_div .b-tg .c-tg,
+        .cc_div .b-tg .c-tgl,
+        .cc_div span.t-lb {
+            width: 3.4em;
+            height: 1.5em;
+            border-radius: 4em
+        }
+
+        .cc_div .b-tg .c-tg.c-ro {
+            cursor: not-allowed
+        }
+
+        .cc_div .b-tg .c-tgl~.c-tg.c-ro {
+            background: #d5dee2;
+            background: var(--cc-toggle-bg-readonly)
+        }
+
+        .cc_div .b-tg .c-tgl~.c-tg.c-ro:after {
+            box-shadow: none
+        }
+
+        .cc_div .b-tg .c-tg:after {
+            content: "";
+            position: relative;
+            display: block;
+            left: .125em;
+            top: .125em;
+            width: 1.25em;
+            height: 1.25em;
+            border: none;
+            box-sizing: content-box;
+            background: #fff;
+            background: var(--cc-toggle-knob-bg);
+            box-shadow: 0 1px 2px rgba(24, 32, 35, .36);
+            transition: transform .25s ease;
+            border-radius: 100%
+        }
+
+        .cc_div .b-tg .c-tgl:checked~.c-tg:after {
+            transform: translateX(1.9em)
+        }
+
+        #s-bl table,
+        #s-bl td,
+        #s-bl th {
+            border: none
+        }
+
+        #s-bl tbody tr {
+            transition: background-color .25s ease
+        }
+
+        #s-bl tbody tr:hover {
+            background: #e9eff4;
+            background: var(--cc-cookie-category-block-bg-hover)
+        }
+
+        #s-bl table {
+            text-align: left;
+            border-collapse: collapse;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            overflow: hidden
+        }
+
+        #s-bl td,
+        #s-bl th {
+            padding: .8em .625em;
+            text-align: left;
+            vertical-align: top;
+            font-size: .8em;
+            padding-left: 1.2em
+        }
+
+        #s-bl th {
+            font-family: inherit;
+            padding: 1.2em
+        }
+
+        #s-bl thead tr:first-child {
+            border-bottom: 1px solid #e9edf2;
+            border-color: var(--cc-cookie-table-border)
+        }
+
+        .force--consent #cs,
+        .force--consent #s-cnt {
+            width: 100vw
+        }
+
+        #cm-ov,
+        #cs-ov {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            visibility: hidden;
+            opacity: 0;
+            background: #070707;
+            background: rgba(4, 6, 8, .85);
+            background: var(--cc-overlay-bg);
+            display: none;
+            transition: none
+        }
+
+        .c--anim #cs-ov,
+        .force--consent .c--anim #cm-ov,
+        .force--consent.show--consent #cm-ov,
+        .show--settings #cs-ov {
+            display: block
+        }
+
+        #cs-ov {
+            z-index: 2
+        }
+
+        .force--consent .cc_div {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            width: 100vw;
+            visibility: hidden;
+            transition: visibility .25s linear
+        }
+
+        .force--consent.show--consent .c--anim .cc_div,
+        .force--consent.show--settings .c--anim .cc_div {
+            visibility: visible
+        }
+
+        .force--consent #cm {
+            position: absolute
+        }
+
+        .force--consent #cm.bar {
+            width: 100vw;
+            max-width: 100vw
+        }
+
+        html.force--consent.show--consent {
+            overflow-y: hidden !important
+        }
+
+        html.force--consent.show--consent,
+        html.force--consent.show--consent body {
+            height: auto !important;
+            overflow-x: hidden !important
+        }
+
+        .cc_div .act .b-bn .b-tl::before,
+        .cc_div .b-bn .b-tl::before {
+            border: solid #2d4156;
+            border-color: var(--cc-btn-secondary-text);
+            border-width: 0 2px 2px 0;
+            padding: .2em;
+            display: inline-block;
+            position: absolute;
+            content: '';
+            margin-right: 15px;
+            position: absolute;
+            transform: translateY(-50%) rotate(45deg);
+            left: 1.2em;
+            top: 50%
+        }
+
+        .cc_div .act .b-bn .b-tl::before {
+            transform: translateY(-20%) rotate(225deg)
+        }
+
+        .cc_div .on-i::before {
+            border: solid #fff;
+            border-color: var(--cc-toggle-knob-icon-color);
+            border-width: 0 2px 2px 0;
+            padding: .1em;
+            display: inline-block;
+            padding-bottom: .45em;
+            content: '';
+            margin: 0 auto;
+            transform: rotate(45deg);
+            top: .37em;
+            left: .75em;
+            position: absolute
+        }
+
+        #s-c-bn::after,
+        #s-c-bn::before {
+            content: '';
+            position: absolute;
+            left: .82em;
+            top: .58em;
+            height: .6em;
+            width: 1.5px;
+            background: #444d53;
+            background: var(--cc-btn-secondary-text);
+            transform: rotate(45deg);
+            border-radius: 1em;
+            margin: 0 auto
+        }
+
+        #s-c-bn::after {
+            transform: rotate(-45deg)
+        }
+
+        .cc_div .off-i,
+        .cc_div .on-i {
+            height: 100%;
+            width: 50%;
+            position: absolute;
+            right: 0;
+            display: block;
+            text-align: center;
+            transition: opacity .15s ease
+        }
+
+        .cc_div .on-i {
+            left: 0;
+            opacity: 0
+        }
+
+        .cc_div .off-i::after,
+        .cc_div .off-i::before {
+            right: .8em;
+            top: .42em;
+            content: ' ';
+            height: .7em;
+            width: .09375em;
+            display: block;
+            background: #cdd6dc;
+            background: var(--cc-toggle-knob-icon-color);
+            margin: 0 auto;
+            position: absolute;
+            transform-origin: center
+        }
+
+        .cc_div .off-i::before {
+            transform: rotate(45deg)
+        }
+
+        .cc_div .off-i::after {
+            transform: rotate(-45deg)
+        }
+
+        .cc_div .b-tg .c-tgl:checked~.c-tg .on-i {
+            opacity: 1
+        }
+
+        .cc_div .b-tg .c-tgl:checked~.c-tg .off-i {
+            opacity: 0
+        }
+
+        .force--consent #cm.box.middle,
+        .force--consent #cm.cloud.middle {
+            top: 50%;
+            transform: translateY(-37%);
+            bottom: auto
+        }
+
+        .force--consent #cm.box.middle.zoom,
+        .force--consent #cm.cloud.middle.zoom {
+            transform: scale(.95) translateY(-50%)
+        }
+
+        #cm.box.center {
+            left: 1em;
+            right: 1em;
+            margin: 0 auto
+        }
+
+        #cm.cloud {
+            max-width: 50em;
+            margin: 0 auto;
+            text-align: center;
+            left: 1em;
+            right: 1em;
+            overflow: hidden;
+            padding: 1.3em 2em;
+            width: unset
+        }
+
+        .cc_div .cloud #c-inr {
+            display: table;
+            width: 100%
+        }
+
+        .cc_div .cloud #c-inr-i {
+            width: 70%;
+            display: table-cell;
+            vertical-align: top;
+            padding-right: 2.4em
+        }
+
+        .cc_div .cloud #c-txt {
+            margin-bottom: 0;
+            font-size: .85em
+        }
+
+        .cc_div .cloud #c-bns {
+            min-width: 170px;
+            display: table-cell;
+            vertical-align: middle
+        }
+
+        #cm.cloud .c-bn {
+            margin: .625em 0 0;
+            width: 100%
+        }
+
+        #cm.cloud .c-bn:first-child {
+            margin: 0
+        }
+
+        #cm.cloud.left {
+            margin-right: 1.25em
+        }
+
+        #cm.cloud.right {
+            margin-left: 1.25em
+        }
+
+        #cm.bar {
+            width: 100%;
+            max-width: 100%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 0;
+            position: fixed;
+            padding: 2em
+        }
+
+        #cm.bar #c-inr {
+            max-width: 32em;
+            margin: 0 auto
+        }
+
+        #cm.bar #c-bns {
+            max-width: 33.75em
+        }
+
+        #cm.bar #cs {
+            padding: 0
+        }
+
+        .cc_div .bar #c-s-in {
+            top: 0;
+            transform: none;
+            height: 100%;
+            max-height: 100%
+        }
+
+        .cc_div .bar #s-bl,
+        .cc_div .bar #s-bns,
+        .cc_div .bar #s-hdr {
+            padding-left: 1.6em;
+            padding-right: 1.6em
+        }
+
+        .cc_div .bar #cs {
+            padding: 0
+        }
+
+        .cc_div .bar #s-inr {
+            margin: 0;
+            margin-left: auto;
+            margin-right: 0;
+            border-radius: 0;
+            max-width: 32em
+        }
+
+        .cc_div .bar.left #s-inr {
+            margin-left: 0;
+            margin-right: auto
+        }
+
+        .cc_div .bar #s-bl table,
+        .cc_div .bar #s-bl tbody,
+        .cc_div .bar #s-bl td,
+        .cc_div .bar #s-bl th,
+        .cc_div .bar #s-bl thead,
+        .cc_div .bar #s-bl tr,
+        .cc_div .bar #s-cnt {
+            display: block
+        }
+
+        .cc_div .bar #s-bl thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px
+        }
+
+        .cc_div .bar #s-bl tr {
+            border-top: 1px solid #e3e7ed;
+            border-color: var(--cc-cookie-table-border)
+        }
+
+        .cc_div .bar #s-bl td {
+            border: none;
+            position: relative;
+            padding-left: 35%
+        }
+
+        .cc_div .bar #s-bl td:before {
+            position: absolute;
+            left: 1em;
+            padding-right: .625em;
+            white-space: nowrap;
+            content: attr(data-column);
+            color: #000;
+            color: var(--cc-text);
+            overflow: hidden;
+            text-overflow: ellipsis
+        }
+
+        #cm.top {
+            bottom: auto;
+            top: 1.25em
+        }
+
+        #cm.left {
+            right: auto;
+            left: 1.25em
+        }
+
+        #cm.right {
+            left: auto;
+            right: 1.25em
+        }
+
+        #cm.bar.left,
+        #cm.bar.right {
+            left: 0;
+            right: 0
+        }
+
+        #cm.bar.top {
+            top: 0
+        }
+
+        @media screen and (max-width:688px) {
+
+            #cm,
+            #cm.cloud,
+            #cm.left,
+            #cm.right {
+                width: auto;
+                max-width: 100%;
+                margin: 0;
+                padding: 1.4em !important;
+                right: 1em;
+                left: 1em;
+                bottom: 1em;
+                display: block
+            }
+
+            .force--consent #cm,
+            .force--consent #cm.cloud {
+                width: auto;
+                max-width: 100vw
+            }
+
+            #cm.top {
+                top: 1em;
+                bottom: auto
+            }
+
+            #cm.bottom {
+                bottom: 1em;
+                top: auto
+            }
+
+            #cm.bar.bottom {
+                bottom: 0
+            }
+
+            .cc_div .cloud #c-txt {
+                font-size: .9em
+            }
+
+            #cm.cloud .c-bn {
+                font-size: .85em
+            }
+
+            #s-bns,
+            .cc_div .bar #s-bns {
+                padding: 1em 1.3em
+            }
+
+            .cc_div .bar #s-inr {
+                max-width: 100%;
+                width: 100%
+            }
+
+            .cc_div .cloud #c-inr-i {
+                padding-right: 0
+            }
+
+            #cs {
+                border-radius: 0;
+                padding: 0
+            }
+
+            #c-s-in {
+                max-height: 100%;
+                height: 100%;
+                top: 0;
+                transform: none
+            }
+
+            .cc_div .b-tg {
+                transform: scale(1.1);
+                right: 1.1em
+            }
+
+            #s-inr {
+                margin: 0;
+                padding-bottom: 7.9em;
+                border-radius: 0
+            }
+
+            #s-bns {
+                height: 7.9em
+            }
+
+            #s-bl,
+            .cc_div .bar #s-bl {
+                padding: 1.3em
+            }
+
+            #s-hdr,
+            .cc_div .bar #s-hdr {
+                padding: 0 1.3em
+            }
+
+            #s-bl table {
+                width: 100%
+            }
+
+            #s-inr.bns-t {
+                padding-bottom: 10.5em
+            }
+
+            .bns-t #s-bns {
+                height: 10.5em
+            }
+
+            .cc_div .bns-t .c-bn {
+                font-size: .83em;
+                padding: .9em 1.6em
+            }
+
+            #s-cnt .b-bn .b-tl {
+                padding-top: 1.2em;
+                padding-bottom: 1.2em
+            }
+
+            #s-bl table,
+            #s-bl tbody,
+            #s-bl td,
+            #s-bl th,
+            #s-bl thead,
+            #s-bl tr,
+            #s-cnt {
+                display: block
+            }
+
+            #s-bl thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px
+            }
+
+            #s-bl tr {
+                border-top: 1px solid #e3e7ed;
+                border-color: var(--cc-cookie-table-border)
+            }
+
+            #s-bl td {
+                border: none;
+                position: relative;
+                padding-left: 35%
+            }
+
+            #s-bl td:before {
+                position: absolute;
+                left: 1em;
+                padding-right: .625em;
+                white-space: nowrap;
+                content: attr(data-column);
+                color: #000;
+                color: var(--cc-text);
+                overflow: hidden;
+                text-overflow: ellipsis
+            }
+
+            #cm .c-bn,
+            .cc_div .c-bn {
+                width: 100%;
+                margin-right: 0
+            }
+
+            #s-cnt #s-rall-bn {
+                margin-left: 0
+            }
+
+            #c-bns button+button,
+            #s-cnt button+button {
+                margin-top: .625em;
+                float: unset
+            }
+
+            #cm.box,
+            #cm.cloud {
+                left: 1em;
+                right: 1em;
+                width: auto
+            }
+
+            #cm.cloud.left,
+            #cm.cloud.right {
+                margin: 0
+            }
+
+            .cc_div .cloud #c-bns,
+            .cc_div .cloud #c-inr,
+            .cc_div .cloud #c-inr-i {
+                display: block;
+                width: auto;
+                min-width: unset
+            }
+
+            .cc_div .cloud #c-txt {
+                margin-bottom: 1.625em
+            }
+        }
+
+        .cc_div.ie #c-vln {
+            height: 100%;
+            padding-top: 5.62em
+        }
+
+        .cc_div.ie .bar #c-vln {
+            padding-top: 0
+        }
+
+        .cc_div.ie #cs {
+            max-height: 37.5em;
+            position: relative;
+            top: 0;
+            margin-top: -5.625em
+        }
+
+        .cc_div.ie .bar #cs {
+            margin-top: 0;
+            max-height: 100%
+        }
+
+        .cc_div.ie #cm {
+            border: 1px solid #dee6e9
+        }
+
+        .cc_div.ie #c-s-in {
+            top: 0
+        }
+
+        .cc_div.ie .b-tg {
+            padding-left: 1em;
+            margin-bottom: .7em
+        }
+
+        .cc_div.ie .b-tg .c-tgl:checked~.c-tg:after {
+            left: 1.95em
+        }
+
+        .cc_div.ie #s-bl table {
+            overflow: auto
+        }
+
+        .cc_div.ie .b-tg .c-tg {
+            display: none
+        }
+
+        .cc_div.ie .b-tg .c-tgl {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            margin-bottom: .2em;
+            height: auto
+        }
+
+        .cc_div.ie #s-cnt .b-bn .b-tl {
+            padding: 1.3em 6.4em 1.3em 1.4em
+        }
+
+        .cc_div.ie .bar #s-bl td:before {
+            display: none
+        }
+
+        .cc_div.ie .bar #s-bl td {
+            padding: .8em .625em .8em 1.2em
+        }
+
+        .cc_div.ie .bar #s-bl thead tr {
+            position: relative
+        }
+
+        .cc_div.ie .b-tg .t-lb {
+            filter: alpha(opacity=0)
+        }
+
+        .cc_div.ie #cm-ov,
+        .cc_div.ie #cs-ov {
+            filter: alpha(opacity=80)
+        }
+
+        #cm .c_link {
+            display: none;
+        }
+    </style>
+</head>
+
+
+<body class="home-page">
+    <div class="wrapper">
+        <header class="header">
+            <div class="max-wrap layout header__holder">
+
+                <div class="logo">
+
+
+                    <span> <em>Marko</em> </span><img style="display: none;" class="logo-print" src="img/logo.png" alt="Marko">
+
+
+                </div>
+
+                <div class="social-networks">
+                    <div class="social-networks__list">
+                        <div class="social-networks__item">
+                            <a href="https://www.facebook.com/markoholding/" class="fb" target="_blank"><span>Facebook</span><svg class="svg-ico-facebook" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 123 263.5">
+                                    <path fill="#3a589e" d="M80.9 85.2V57.9c0-10.4 6.6-12.6 11.5-12.6s29.5 0 29.5 0V-0.1H81.5c-44.8 0-55.2 33.9-55.2 55.2v30.1H0.1v46.5h26.2c0 59.6 0 131.7 0 131.7H81c0 0 0-72.7 0-131.7h37.2l4.9-46.5L80.9 85.2 80.9 85.2z"></path>
+                                </svg></a>
+                        </div>
+                        <div class="social-networks__item">
+                            <a href="https://vk.com/markoholding" class="vk" target="_blank"><span>Vkontakte</span><svg class="svg-ico-vkontakte" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 107.585 61.139">
+                                    <path fill="#4b73a4" d="M104.8 51.2c-2.6-2.6-13.2-13.7-13.2-13.7 -1.6-2.1-2.1-4.7-0.5-6.8 3.2-4.2 9-11.6 11.1-14.8 3.2-4.2 9-13.2 1.1-13.2H85.9c-1.6 0-2.6 1.1-3.7 2.1 0 0-6.8 12.6-9 16.8 -5.8 11.6-10 7.9-10 2.6V5.9c0-3.2-2.6-5.8-5.8-5.8H44.3c-3.7-0.5-6.8 1.6-9.5 4.2 0 0 6.8-1.1 6.8 7.9v13.7c0 2.1-1.6 3.7-3.7 3.7 -1.1 0-2.1-0.5-3.2-1.1 -5.3-7.4-10-15.3-13.2-23.7 -0.5-1.1-2.1-2.1-3.2-2.1H2.6C1.1 2.7 0 3.7 0 5.3c0 0.5 0 0.5 0 1.1 4.7 13.2 25.3 54.3 49 54.3h10c2.1 0 3.7-1.6 3.7-3.7v-5.8c0-2.1 1.6-3.7 3.7-3.7 1.1 0 2.1 0.5 2.6 1.1L80.6 59.6c1.1 1.1 2.6 1.6 3.7 1.6h15.8C109.1 60.7 109.1 55.4 104.8 51.2z"></path>
+                                </svg></a>
+                        </div>
+                        <div class="social-networks__item">
+                            <a href="https://ok.ru/markoholding" class="ok" target="_blank"><span>Odnoklassniki</span><svg class="svg-ico-odnoklassniki" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 87.1 146.5">
+                                    <path fill="#f2822e" d="M44 68.4c19.1 0 34.2-15.2 34.2-34.2C78.1 15.2 63 0 44 0 24.9 0 9.8 15.2 9.8 34.2 9.8 53.2 24.9 68.4 44 68.4zM44 17.1c9.3 0 17.1 7.8 17.1 17.1 0 9.3-7.8 17.1-17.1 17.1 -9.3 0-17.1-7.8-17.1-17.1C26.9 24.9 34.7 17.1 44 17.1zM78.2 73.3c-4.9 0-14.7 9.8-34.2 9.8 -19.5 0-29.3-9.8-34.2-9.8C4.4 73.3 0 77.7 0 83c0 4.9 2.9 7.3 4.9 8.3 5.9 3.4 24.4 11.2 24.4 11.2L8.3 128.9c0 0-3.9 4.4-3.9 7.8 0 5.4 4.4 9.8 9.8 9.8 4.9 0 7.3-3.4 7.3-3.4s22-26.4 22-25.9l22 25.9c0 0 2.5 3.4 7.3 3.4 5.4 0 9.8-4.4 9.8-9.8 0-2.9-3.9-7.8-3.9-7.8l-21-26.4c0 0 18.6-7.8 24.4-11.2 2-1.5 4.9-3.4 4.9-8.3C87.9 77.7 83.5 73.3 78.2 73.3z"></path>
+                                </svg></a>
+                        </div>
+                        <div class="social-networks__item">
+                            <a href="https://www.youtube.com/channel/UCR90-TJR5cfT4kem7OWTGxg" class="youtube" target="_blank"><span>Youtube</span><svg class="svg-ico-youtube" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 96.9 96.9">
+                                    <path d="M95.2 25.5c-1.2-5.2-5.4-9-10.5-9.5 -12-1.3-24.2-1.3-36.3-1.3 -12.1 0-24.3 0-36.3 1.3 -5.1 0.6-9.3 4.4-10.5 9.5C0 32.9 0 40.9 0 48.4 0 56 0 64 1.7 71.3c1.2 5.2 5.4 9 10.5 9.5 12 1.3 24.2 1.3 36.3 1.3 12.1 0 24.3 0 36.3-1.3 5.1-0.6 9.3-4.4 10.5-9.5 1.7-7.3 1.7-15.3 1.7-22.9C96.9 40.9 96.9 32.9 95.2 25.5zM35.9 63.5c0-10.7 0-21.3 0-32 10.3 5.4 20.5 10.7 30.8 16.1C56.4 52.8 46.2 58.1 35.9 63.5z"></path>
+                                </svg></a>
+                        </div>
+                        <div class="social-networks__item">
+                            <a href="https://www.instagram.com/markoholding" class="instagram" target="_blank"><span>Instagram</span><svg xmlns="http://www.w3.org/2000/svg" class="svg-ico-instagram" width="32" height="32" viewBox="38 318 612 612">
+                                    <path d="M507.7 625.8c0 90.7-73.5 164.2-164.2 164.2s-164.2-73.5-164.2-164.2c0-33.5 10.1-64.6 27.3-90.7H38v254.2C38 867 101 930 178.7 930h330.4c77.7 0 140.7-63 140.7-140.7V535.1H480.2C497.5 561 507.7 592.3 507.7 625.8zM344 743.1c64.8 0 117.3-52.5 117.3-117.3S408.8 508.5 344 508.5 226.7 561 226.7 625.8C226.7 690.6 279.2 743.1 344 743.1zM279.9 561.5c17.2-17 40-26.6 64.1-26.6 24.3 0 47.1 9.4 64.3 26.6 17.2 17.2 26.6 40 26.6 64.3s-9.4 47.1-26.6 64.3c-17.2 17.2-40 26.6-64.3 26.6 -24.3 0-47.1-9.4-64.1-26.6 -17.2-17.2-26.6-40-26.6-64.3C253.3 601.5 262.7 578.7 279.9 561.5zM509.3 318H178.7c-7.4 0-14.8 0.5-22.1 1.6h22.6v142h-26.6V320.4c-9.2 1.6-18.1 4.3-26.4 7.8v133.6H99.7V342.3C62.4 367.6 38 410.3 38 458.7v49.8h190.5c29.7-29 70.1-46.9 115-46.9 44.7 0 85.3 17.9 115 46.9H650v-49.8C650 381 587 318 509.3 318zM577 461.6h-69.3v-69.3H577V461.6z" fill="#a43b97"></path>
+                                </svg></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-options">
+
+
+                    <div class="user-options__item user-options__item_search search-form-js">
+                        <a href="https://shop.marko-shoes.ru/#" class="search-closer search-closer-js" title=""><svg class="svg-ico-cross" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.3 23.3">
+                                <path d="M23.3 2.3 21 0l-9.3 9.3L2.3 0 0 2.3l9.3 9.3L0 21l2.4 2.4 9.3-9.3 9.3 9.3 2.4-2.3-9.3-9.3Z"></path>
+                            </svg> <span class="hide-text">Открыть форму поиска</span></a>
+                        <a href="https://shop.marko-shoes.ru/#" class="search-opener search-opener-js tc--initialized" title=""><svg class="svg-ico-search" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80.3 80.5">
+                                <path d="M59.3 54.6c10.7-13 10-32.6-2.2-44.8 -13-13-34.3-13-47.3 0s-13 34.3 0 47.3c6.5 6.5 15 9.7 23.6 9.7 7.5 0 15-2.5 21.2-7.5l20.2 20.2c0.7 0.7 1.5 1 2.3 1s1.7-0.3 2.3-1c1.3-1.3 1.3-3.3 0-4.7L59.3 54.6zM14.5 52.3c-10.4-10.4-10.4-27.4 0-37.8 5.2-5.2 12-7.9 18.9-7.9s13.7 2.7 18.9 7.9c10.4 10.4 10.4 27.4 0 37.8C41.9 62.8 24.9 62.8 14.5 52.3z"></path>
+                            </svg> <span class="hide-text">Закрыть форму поиска</span></a>
+                        <form class="search-form" action="https://shop.marko-shoes.ru/search/" method="get" data-tc-stop="">
+                            <div class="search-form__field input-wrap">
+                                <label for="search">&nbsp;</label>
+                                <input type="text" name="q" class="search-form__input field-effects-js" placeholder="Поиск..." id="search">
+                                <div class="search-form__btn">
+                                    <svg class="svg-ico-search" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80.3 80.5">
+                                        <path d="M59.3 54.6c10.7-13 10-32.6-2.2-44.8 -13-13-34.3-13-47.3 0s-13 34.3 0 47.3c6.5 6.5 15 9.7 23.6 9.7 7.5 0 15-2.5 21.2-7.5l20.2 20.2c0.7 0.7 1.5 1 2.3 1s1.7-0.3 2.3-1c1.3-1.3 1.3-3.3 0-4.7L59.3 54.6zM14.5 52.3c-10.4-10.4-10.4-27.4 0-37.8 5.2-5.2 12-7.9 18.9-7.9s13.7 2.7 18.9 7.9c10.4 10.4 10.4 27.4 0 37.8C41.9 62.8 24.9 62.8 14.5 52.3z"></path>
+                                    </svg>
+                                    <span>Find</span>
+                                    <input type="submit" value="Поиск">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="user-options__item user-options__item_login">
+                        <a href="https://shop.marko-shoes.ru/#" class="btn-login-js" title=""><svg class="svg-ico-login" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 94 94">
+                                <path d="M43.7 63.9l4.4 4.4c1 1 2.3 1.6 3.7 1.5h5.2v4.4c0 3.3 2.7 6 6 6 0 0 0 0 0 0h4.4v5.2c0 1.4 0.5 2.7 1.5 3.7l3.5 3.5c0.9 0.9 2.2 1.4 3.5 1.4h13.8c2.4 0 4.3-1.9 4.3-4.3l0 0v-13.8c0-1.3-0.5-2.6-1.4-3.5l-28.7-28.7C69.9 26.6 60.9 7.9 43.7 1.9 31.8-2.3 18.6 0.7 9.6 9.6 -3.2 22.5-3.2 43.3 9.6 56.1 18.5 65 31.8 68 43.7 63.9zM13.9 13.9C24.4 3.4 41.4 3.4 51.8 13.8c7.7 7.7 10 19.4 5.7 29.5 -0.5 1.1-0.2 2.4 0.6 3.3l29.8 29.8v11.6h-11.6l-2.9-2.9v-7.1c0-2.1-1.7-3.9-3.9-3.9l0 0 0 0h-6.5v-6.5c0-2.1-1.7-3.9-3.9-3.9l0 0h-7.1l-5.6-5.6c-0.9-0.9-2.2-1.1-3.3-0.6 -13.7 5.8-29.4-0.6-35.2-14.3 -4.3-10.1-2-21.7 5.7-29.4L13.9 13.9zM26.4 37.4c6.1 0 11-4.9 11-11s-4.9-11-11-11 -11 4.9-11 11S20.4 37.4 26.4 37.4zM26.4 21.5c2.8 0 5 2.2 5 5s-2.2 5-5 5 -5-2.2-5-5c0-2.8 2.2-5 5-5 0 0 0 0 0 0V21.5z"></path>
+                            </svg> <span class="hide-text">Вход</span></a>
+                    </div>
+                    <div class="user-options__item user-options__item_login">
+                        <a href="https://shop.marko-shoes.ru/#" title="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path style="fill: none" fill="none" d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6M10 21C10 21.5523 9.55228 22 9 22C8.44772 22 8 21.5523 8 21C8 20.4477 8.44772 20 9 20C9.55228 20 10 20.4477 10 21ZM21 21C21 21.5523 20.5523 22 20 22C19.4477 22 19 21.5523 19 21C19 20.4477 19.4477 20 20 20C20.5523 20 21 20.4477 21 21Z" stroke="#101828" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span class="hide-text">Корзина</span>
+                        </a>
+                    </div>
+
+
+                    <div class="login headerUserBlock">
+
+                        <div class="login__item auth">
+                            <a href="https://shop.marko-shoes.ru/auth/">Авторизация</a>
+                        </div>
+
+
+                        <div class="login__item registration">
+                            <a href="https://shop.marko-shoes.ru/registration/">Регистрация</a>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="user-options__item user-options__item_social">
+                        <a href="https://shop.marko-shoes.ru/#" title=""><svg class="svg-icon-share" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"></path>
+                            </svg><span class="hide-text">Соцсети</span></a>
+                    </div>
+
+                </div>
+            </div>
+
+        </header>
+        <nav class="nav shutter--nav-js sticky">
+            <div class="sticky_menu_logo"><a href="https://shop.marko-shoes.ru/"> <em>Marko</em> </a></div>
+
+            <div class="nav__layout" data-tc-stop="">
+                <ul class="nav__list nav__list-js">
+
+
+                    <li class="has-drop">
+
+                        <div class="nav__tab nav__tab-js">
+                            <a href="https://shop.marko-shoes.ru/zhenshchinam/"><span>Женщинам</span></a>
+                            <span class="nav__angle nav-handler-js"><i>&nbsp;</i></span>
+                        </div>
+
+
+                        <div class="nav__drop nav__submenu nav__drop-js">
+                            <div class="nav__submenu">
+
+                                <div class="nav__category category">
+                                    <h2 class="category__heading"><a href="https://shop.marko-shoes.ru/zhenshchinam/">Все категории</a></h2>
+                                    <ul class="category__list">
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/zhenshchinam/baletki/">Балетки <small>(6)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/zhenshchinam/bosonozhki/">Босоножки <small>(259)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/zhenshchinam/botilony/">Ботильоны <small>(174)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/zhenshchinam/botinki/">Ботинки <small>(512)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/zhenshchinam/botforty/">Ботфорты <small>(23)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/zhenshchinam/vetnamki/">Вьетнамки <small>(1)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/zhenshchinam/dutiki/">Дутики <small>(4)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/zhenshchinam/kedy/">Кеды <small>(37)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/zhenshchinam/krossovki_snikery/">Кроссовки/сникеры <small>(194)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/zhenshchinam/lofery/">Лоферы <small>(77)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/zhenshchinam/mokasiny/">Мокасины <small>(2)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/zhenshchinam/p_botinki/">П/ботинки <small>(279)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/zhenshchinam/p_kedy/">П/кеды <small>(99)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/zhenshchinam/p_sapogi/">П/сапоги <small>(185)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/zhenshchinam/sabo/">Сабо <small>(155)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/zhenshchinam/sandalii/">Сандалии <small>(31)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/zhenshchinam/sapogi/">Сапоги <small>(97)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/zhenshchinam/sapozhki/">Сапожки <small>(43)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/zhenshchinam/slipony/">Слипоны <small>(20)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/zhenshchinam/tapochki/">Тапочки <small>(139)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/zhenshchinam/tufli/">Туфли <small>(141)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/zhenshchinam/tufli_letnie/">Туфли летние <small>(4)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/zhenshchinam/tufli_lodochki/">Туфли-лодочки <small>(171)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/zhenshchinam/uggi/">Угги <small>(12)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/zhenshchinam/chelsi/">Челси <small>(74)</small></a>
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+
+                                <div class="nav__category category">
+
+                                    <h2 class="category__heading">Спецпредложения</h2>
+                                    <div class="brand__box" style="margin-bottom: 25px;">
+                                        <ul class="brand__list">
+
+
+                                            <li class="category__item">
+                                                <a href="https://shop.marko-shoes.ru/zhenskaya_obuv_bolshih_razmerov/">Обувь больших размеров</a>
+                                            </li>
+
+
+                                            <li class="category__item">
+                                                <a href="https://shop.marko-shoes.ru/zhenskaya_obuv_malyh_razmerov/">Обувь малых размеров</a>
+                                            </li>
+
+
+                                            <li class="category__item">
+                                                <a href="https://shop.marko-shoes.ru/obuv_povyshennoy_polnoty/">Обувь повышенной полноты</a>
+                                            </li>
+
+
+                                        </ul>
+
+                                    </div>
+
+                                    <h2 class="category__heading">Бренды</h2>
+                                    <div class="brand__box">
+                                        <ul class="brand__list">
+
+
+                                            <li class="category__item">
+                                                <a href="https://shop.marko-shoes.ru/zhenshchinam/filter/brend-is-bravo/apply/">Bravo</a>
+                                            </li>
+
+
+                                            <li class="category__item">
+                                                <a href="https://shop.marko-shoes.ru/zhenshchinam/filter/brend-is-marko/apply/">Marko</a>
+                                            </li>
+
+
+                                            <li class="category__item">
+                                                <a href="https://shop.marko-shoes.ru/zhenshchinam/filter/brend-is-spotter/apply/">Spotter</a>
+                                            </li>
+
+
+                                            <li class="category__item">
+                                                <a href="https://shop.marko-shoes.ru/zhenshchinam/filter/brend-is-marko_home/apply/">Marko Home</a>
+                                            </li>
+
+
+                                            <li class="category__item category__item_all">
+                                                <a href="https://shop.marko-shoes.ru/about/assortment/">Гид по брендам</a>
+                                            </li>
+
+                                        </ul>
+
+
+                                        <div class="brand__image">
+                                            <a href="https://shop.marko-shoes.ru/actions/news/chernaya-pyatnitsa-v-marko1281/">
+                                                <img src="img/vu07baxcj2q1jg961rkd200ihfb0r6gf.jpg" class="brand__image_source">
+                                            </a>
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                    </li>
+
+
+                    <li class="has-drop">
+
+                        <div class="nav__tab nav__tab-js">
+                            <a href="https://shop.marko-shoes.ru/muzhchinam/"><span>Мужчинам</span></a>
+                            <span class="nav__angle nav-handler-js"><i>&nbsp;</i></span>
+                        </div>
+
+
+                        <div class="nav__drop nav__submenu nav__drop-js">
+                            <div class="nav__submenu">
+
+                                <div class="nav__category category">
+                                    <h2 class="category__heading"><a href="https://shop.marko-shoes.ru/muzhchinam/">Все категории</a></h2>
+                                    <ul class="category__list">
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/muzhchinam/bertsy_1/">Берцы <small>(6)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/muzhchinam/botinki_1/">Ботинки <small>(327)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/muzhchinam/kedy_1/">Кеды <small>(39)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/muzhchinam/krossovki_snikery_1/">Кроссовки/сникеры <small>(82)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/muzhchinam/lofery_1/">Лоферы <small>(10)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/muzhchinam/mokasiny_1/">Мокасины <small>(17)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/muzhchinam/p_botinki_1/">П/ботинки <small>(501)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/muzhchinam/p_kedy_1/">П/кеды <small>(84)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/muzhchinam/p_sapogi_1/">П/сапоги <small>(4)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/muzhchinam/sabo_1/">Сабо <small>(9)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/muzhchinam/sandalii_1/">Сандалии <small>(27)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/muzhchinam/slipony_1/">Слипоны <small>(37)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/muzhchinam/tapochki_1/">Тапочки <small>(72)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/muzhchinam/tufli_1/">Туфли <small>(25)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/muzhchinam/uggi_1/">Угги <small>(1)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/muzhchinam/futzalki_1/">Футзалки <small>(1)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/muzhchinam/chelsi_1/">Челси <small>(6)</small></a>
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+
+                                <div class="nav__category category">
+
+                                    <h2 class="category__heading">Спецпредложения</h2>
+                                    <div class="brand__box" style="margin-bottom: 25px;">
+                                        <ul class="brand__list">
+
+
+                                            <li class="category__item">
+                                                <a href="https://shop.marko-shoes.ru/muzhskaya_obuv_bolshih_razmerov/">Обувь больших размеров</a>
+                                            </li>
+
+
+                                            <li class="category__item">
+                                                <a href="https://shop.marko-shoes.ru/muzhskaya_obuv_malyh_razmerov/">Обувь малых размеров</a>
+                                            </li>
+
+
+                                        </ul>
+
+                                    </div>
+
+                                    <h2 class="category__heading">Бренды</h2>
+                                    <div class="brand__box">
+                                        <ul class="brand__list">
+
+
+                                            <li class="category__item">
+                                                <a href="https://shop.marko-shoes.ru/muzhchinam/filter/brend-is-bravo/apply/">Bravo</a>
+                                            </li>
+
+
+                                            <li class="category__item">
+                                                <a href="https://shop.marko-shoes.ru/muzhchinam/filter/brend-is-marko/apply/">Marko</a>
+                                            </li>
+
+
+                                            <li class="category__item">
+                                                <a href="https://shop.marko-shoes.ru/muzhchinam/filter/brend-is-spotter/apply/">Spotter</a>
+                                            </li>
+
+
+                                            <li class="category__item">
+                                                <a href="https://shop.marko-shoes.ru/muzhchinam/filter/brend-is-gator/apply/">Gator</a>
+                                            </li>
+
+
+                                            <li class="category__item">
+                                                <a href="https://shop.marko-shoes.ru/muzhchinam/filter/brend-is-marko_home/apply/">Marko Home</a>
+                                            </li>
+
+
+                                            <li class="category__item category__item_all">
+                                                <a href="https://shop.marko-shoes.ru/about/assortment/">Гид по брендам</a>
+                                            </li>
+
+                                        </ul>
+
+
+                                        <div class="brand__image">
+                                            <a href="https://shop.marko-shoes.ru/actions/news/chernaya-pyatnitsa-v-marko1281/">
+                                                <img src="img/vu07baxcj2q1jg961rkd200ihfb0r6gf.jpg" class="brand__image_source">
+                                            </a>
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                    </li>
+
+
+                    <li class="has-drop">
+
+                        <div class="nav__tab nav__tab-js">
+                            <a href="https://shop.marko-shoes.ru/devochkam/"><span>Девочкам</span></a>
+                            <span class="nav__angle nav-handler-js"><i>&nbsp;</i></span>
+                        </div>
+
+
+                        <div class="nav__drop nav__submenu nav__drop-js">
+                            <div class="nav__submenu">
+
+                                <div class="nav__category category">
+                                    <h2 class="category__heading"><a href="https://shop.marko-shoes.ru/devochkam/">Все категории</a></h2>
+                                    <ul class="category__list">
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/devochkam/baletki_1/">Балетки <small>(4)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/devochkam/bosonozhki_1/">Босоножки <small>(38)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/devochkam/botinki_2/">Ботинки <small>(59)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/devochkam/kedy_2/">Кеды <small>(20)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/devochkam/kroksy_2/">Кроксы <small>(1)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/devochkam/krossovki_snikery_2/">Кроссовки/сникеры <small>(42)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/devochkam/lofery_2/">Лоферы <small>(7)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/devochkam/p_botinki_2/">П/ботинки <small>(39)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/devochkam/p_kedy_2/">П/кеды <small>(21)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/devochkam/p_sapogi_2/">П/сапоги <small>(48)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/devochkam/sandalii_2/">Сандалии <small>(4)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/devochkam/sapogi_2/">Сапоги <small>(37)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/devochkam/sapozhki_2/">Сапожки <small>(4)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/devochkam/tufli_2/">Туфли <small>(35)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/devochkam/tufli_lodochki_1/">Туфли-лодочки <small>(4)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/devochkam/chelsi_2/">Челси <small>(2)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/devochkam/cheshki/">Чешки <small>(1)</small></a>
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+
+                                <div class="nav__category category">
+
+
+                                    <h2 class="category__heading">Бренды</h2>
+                                    <div class="brand__box">
+                                        <ul class="brand__list">
+
+
+                                            <li class="category__item">
+                                                <a href="https://shop.marko-shoes.ru/devochkam/filter/brend-is-san_marko/apply/">San Marko</a>
+                                            </li>
+
+
+                                            <li class="category__item">
+                                                <a href="https://shop.marko-shoes.ru/devochkam/filter/brend-is-spotter/apply/">Spotter</a>
+                                            </li>
+
+
+                                            <li class="category__item">
+                                                <a href="https://shop.marko-shoes.ru/devochkam/filter/brend-is-marko_boots/apply/">Marko Boots</a>
+                                            </li>
+
+
+                                            <li class="category__item">
+                                                <a href="https://shop.marko-shoes.ru/devochkam/filter/brend-is-gator/apply/">Gator</a>
+                                            </li>
+
+
+                                            <li class="category__item category__item_all">
+                                                <a href="https://shop.marko-shoes.ru/about/assortment/">Гид по брендам</a>
+                                            </li>
+
+                                        </ul>
+
+
+                                        <div class="brand__image">
+                                            <a href="https://shop.marko-shoes.ru/actions/news/chernaya-pyatnitsa-v-marko1281/">
+                                                <img src="img/vu07baxcj2q1jg961rkd200ihfb0r6gf.jpg" class="brand__image_source">
+                                            </a>
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                    </li>
+
+
+                    <li class="has-drop">
+
+                        <div class="nav__tab nav__tab-js">
+                            <a href="https://shop.marko-shoes.ru/malchikam/"><span>Мальчикам</span></a>
+                            <span class="nav__angle nav-handler-js"><i>&nbsp;</i></span>
+                        </div>
+
+
+                        <div class="nav__drop nav__submenu nav__drop-js">
+                            <div class="nav__submenu">
+
+                                <div class="nav__category category">
+                                    <h2 class="category__heading"><a href="https://shop.marko-shoes.ru/malchikam/">Все категории</a></h2>
+                                    <ul class="category__list">
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/malchikam/botinki_3/">Ботинки <small>(80)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/malchikam/kedy_3/">Кеды <small>(32)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/malchikam/kroksy_3/">Кроксы <small>(1)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/malchikam/krossovki_snikery_3/">Кроссовки/сникеры <small>(60)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/malchikam/p_botinki_3/">П/ботинки <small>(96)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/malchikam/p_kedy_3/">П/кеды <small>(46)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/malchikam/p_sapogi_3/">П/сапоги <small>(5)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/malchikam/sandalii_3/">Сандалии <small>(25)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/malchikam/sapogi_3/">Сапоги <small>(1)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/malchikam/sapozhki_3/">Сапожки <small>(3)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/malchikam/slipony_3/">Слипоны <small>(1)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/malchikam/cheshki_1/">Чешки <small>(1)</small></a>
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+
+                                <div class="nav__category category">
+
+
+                                    <h2 class="category__heading">Бренды</h2>
+                                    <div class="brand__box">
+                                        <ul class="brand__list">
+
+
+                                            <li class="category__item">
+                                                <a href="https://shop.marko-shoes.ru/malchikam/filter/brend-is-san_marko/apply/">San Marko</a>
+                                            </li>
+
+
+                                            <li class="category__item">
+                                                <a href="https://shop.marko-shoes.ru/malchikam/filter/brend-is-spotter/apply/">Spotter</a>
+                                            </li>
+
+
+                                            <li class="category__item">
+                                                <a href="https://shop.marko-shoes.ru/malchikam/filter/brend-is-marko_boots/apply/">Marko Boots</a>
+                                            </li>
+
+
+                                            <li class="category__item">
+                                                <a href="https://shop.marko-shoes.ru/malchikam/filter/brend-is-gator/apply/">Gator</a>
+                                            </li>
+
+
+                                            <li class="category__item category__item_all">
+                                                <a href="https://shop.marko-shoes.ru/about/assortment/">Гид по брендам</a>
+                                            </li>
+
+                                        </ul>
+
+
+                                        <div class="brand__image">
+                                            <a href="https://shop.marko-shoes.ru/actions/news/chernaya-pyatnitsa-v-marko1281/">
+                                                <img src="img/vu07baxcj2q1jg961rkd200ihfb0r6gf.jpg" class="brand__image_source">
+                                            </a>
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                    </li>
+
+
+                    <li class="has-drop">
+
+                        <div class="nav__tab nav__tab-js">
+                            <a href="https://shop.marko-shoes.ru/malysham/"><span>Малышам</span></a>
+                            <span class="nav__angle nav-handler-js"><i>&nbsp;</i></span>
+                        </div>
+
+
+                        <div class="nav__drop nav__submenu nav__drop-js">
+                            <div class="nav__submenu">
+
+                                <div class="nav__category category">
+                                    <h2 class="category__heading"><a href="https://shop.marko-shoes.ru/malysham/">Все категории</a></h2>
+                                    <ul class="category__list">
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/malysham/p_sapogi_4/">П/сапоги <small>(3)</small></a>
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+
+                                <div class="nav__category category">
+
+
+                                    <h2 class="category__heading">Бренды</h2>
+                                    <div class="brand__box">
+                                        <ul class="brand__list">
+
+
+                                            <li class="category__item">
+                                                <a href="https://shop.marko-shoes.ru/malysham/filter/brend-is-marko_boots/apply/">Marko Boots</a>
+                                            </li>
+
+
+                                            <li class="category__item category__item_all">
+                                                <a href="https://shop.marko-shoes.ru/about/assortment/">Гид по брендам</a>
+                                            </li>
+
+                                        </ul>
+
+
+                                        <div class="brand__image">
+                                            <a href="https://shop.marko-shoes.ru/actions/news/chernaya-pyatnitsa-v-marko1281/">
+                                                <img src="img/vu07baxcj2q1jg961rkd200ihfb0r6gf.jpg" class="brand__image_source">
+                                            </a>
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                    </li>
+
+
+                    <li class="has-drop">
+
+                        <div class="nav__tab nav__tab-js">
+                            <a href="https://shop.marko-shoes.ru/aksessuary/"><span>Аксессуары</span></a>
+                            <span class="nav__angle nav-handler-js"><i>&nbsp;</i></span>
+                        </div>
+
+
+                        <div class="nav__drop nav__submenu nav__drop-js">
+                            <div class="nav__submenu">
+
+                                <div class="nav__category category">
+                                    <h2 class="category__heading"><a href="https://shop.marko-shoes.ru/aksessuary/">Все категории</a></h2>
+                                    <ul class="category__list">
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/aksessuary/vse_sumki_zhenskie/">Все сумки женские <small>(308)</small></a>
+                                        </li>
+
+
+                                        <li class="category__item">
+                                            <a href="https://shop.marko-shoes.ru/aksessuary/vse_sumki_muzhskie/">Все сумки мужские <small>(7)</small></a>
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+
+                                <div class="nav__category category">
+
+
+                                    <h2 class="category__heading">Бренды</h2>
+                                    <div class="brand__box">
+                                        <ul class="brand__list">
+
+
+                                            <li class="category__item">
+                                                <a href="https://shop.marko-shoes.ru/aksessuary/filter/brend-is-vitma/apply/">Vitma</a>
+                                            </li>
+
+
+                                            <li class="category__item category__item_all">
+                                                <a href="https://shop.marko-shoes.ru/about/assortment/">Гид по брендам</a>
+                                            </li>
+
+                                        </ul>
+
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                    </li>
+
+
+                    <li class="">
+
+                        <div class="nav__tab nav__tab-js">
+                            <a href="https://shop.marko-shoes.ru/about/news/"><span>Новости</span></a>
+                            <span class="nav__angle nav-handler-js"><i>&nbsp;</i></span>
+                        </div>
+
+
+                    </li>
+
+
+                    <li class="has-drop">
+
+                        <div class="nav__tab nav__tab-js">
+                            <a href="https://shop.marko-shoes.ru/actions/"><span>Акции</span></a>
+                            <span class="nav__angle nav-handler-js"><i>&nbsp;</i></span>
+                        </div>
+
+
+
+                        <div class="nav__drop nav__drop-js nav__simple">
+                            <ul class="sub-nav__list">
+
+
+                                <li>
+                                    <a href="https://shop.marko-shoes.ru/actions/obuv_za_1499_rub/">
+                                        <span>Обувь за 1499 руб.</span>
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a href="https://shop.marko-shoes.ru/actions/obuv_za_1999_rub/">
+                                        <span>Обувь за 1999 руб.</span>
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a href="https://shop.marko-shoes.ru/actions/obuv_za_2499_rub/">
+                                        <span>Обувь за 2499 руб.</span>
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a href="https://shop.marko-shoes.ru/actions/obuv_za_2999_rub/">
+                                        <span>Обувь за 2999 руб.</span>
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a href="https://shop.marko-shoes.ru/actions/territoriya_super_tsen/">
+                                        <span>Территория СУПЕР ЦЕН</span>
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a href="https://shop.marko-shoes.ru/actions/news/">
+                                        <span>Все акции</span>
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </div>
+
+
+
+                    </li>
+
+
+                    <li class="">
+
+                        <div class="nav__tab nav__tab-js">
+                            <a href="https://shop.marko-shoes.ru/where_to_buy/"><span>Где купить</span></a>
+                            <span class="nav__angle nav-handler-js"><i>&nbsp;</i></span>
+                        </div>
+
+
+                    </li>
+
+
+                    <li class="">
+
+                        <div class="nav__tab nav__tab-js">
+                            <a href="https://www.marko-shoes.ru/blog/"><span>Блог</span></a>
+                            <span class="nav__angle nav-handler-js"><i>&nbsp;</i></span>
+                        </div>
+
+
+                    </li>
+
+
+                </ul>
+            </div>
+            <div id="sticky_search">
+                <form class="search-form" action="https://shop.marko-shoes.ru/search/" method="get" data-tc-stop="">
+                    <div class="search-form__field input-wrap">
+                        <label for="search">&nbsp;</label>
+                        <input type="text" name="q" class="search-form__input field-effects-js" placeholder="Поиск..." id="search">
+                        <div class="search-form__btn">
+                            <svg class="svg-ico-search" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80.3 80.5">
+                                <path d="M59.3 54.6c10.7-13 10-32.6-2.2-44.8 -13-13-34.3-13-47.3 0s-13 34.3 0 47.3c6.5 6.5 15 9.7 23.6 9.7 7.5 0 15-2.5 21.2-7.5l20.2 20.2c0.7 0.7 1.5 1 2.3 1s1.7-0.3 2.3-1c1.3-1.3 1.3-3.3 0-4.7L59.3 54.6zM14.5 52.3c-10.4-10.4-10.4-27.4 0-37.8 5.2-5.2 12-7.9 18.9-7.9s13.7 2.7 18.9 7.9c10.4 10.4 10.4 27.4 0 37.8C41.9 62.8 24.9 62.8 14.5 52.3z"></path>
+                            </svg>
+                            <span>Find</span>
+                            <input type="submit" value="Поиск">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </nav>
+        <div class="main">
+
+            <section class="profile section">
+                <div class="section__inner">
+                    <div class="layout">
+                        <div class="breadcrumbs" itemtype="http://schema.org/BreadcrumbList">
+                            <a class="breadcrumbs__item" itemscope="" itemtype="//schema.org/Thing" itemprop="item" href="/" title="Главная">
+                                Главная
+                                <meta itemprop="position" content="0">
+                            </a>
+                            <a class="breadcrumbs__item" itemscope="" itemtype="//schema.org/Thing" itemprop="item" href="/" title="Главная">
+                                Личный кабиинет
+                                <meta itemprop="position" content="1">
+                            </a>
+                            <a class="breadcrumbs__item" itemscope="" itemtype="//schema.org/Thing" itemprop="item" href="/" title="Главная">
+                                Мои заказы
+                                <meta itemprop="position" content="2">
+                            </a>
+                            <a class="breadcrumbs__item" itemscope="" itemtype="//schema.org/Thing" itemprop="item" title="Берцы">
+                                Активные заказы
+                                <meta itemprop="position" content="3">
+                            </a>
+                        </div>
+
+                        <div class="_resizable-block">
+                            <div class="profile__inner">
+                                <div class="profile__sidebar">
+                                    <div class="profile-nav">
+                                        <div class="profile-nav__mob">
+                                            <div class="profile-nav__current text18"></div>
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M5 7.5L10 12.5L15 7.5" stroke="#667085" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div class="profile-nav__items">
+                                            <div class="profile-nav__item">
+                                                <div class="profile-nav__top">
+                                                    <a href="" class="profile-nav__link ">
+                                                        Мои бронирования
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="profile-nav__item">
+                                                <div class="profile-nav__top">
+                                                    <a href="" class="profile-nav__link _active ">
+                                                        Заказы
+                                                    </a>
+                                                </div>
+                                                <div class="profile-nav__bottom">
+                                                    <div class="profile-nav__sublinks">
+                                                        <a href="" class="profile-nav__sublink _active">Активные заказы</a>
+                                                        <a href="" class="profile-nav__sublink ">Архив заказов</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="profile-nav__item">
+                                                <div class="profile-nav__top">
+                                                    <a href="" class="profile-nav__link ">
+                                                        Заявки на возврат
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="profile-nav__item">
+                                                <div class="profile-nav__top">
+                                                    <a href="" class="profile-nav__link ">
+                                                        Персональные данные
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="profile-nav__item">
+                                                <div class="profile-nav__top">
+                                                    <a href="" class="profile-nav__link ">
+                                                        Безопасность
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="profile__content">
+                                    <div class="cart-empty">
+                                        <div class="cart-empty__title">
+                                            Пока нет ни одного заказа
+                                        </div>
+                                        <div class="cart-empty__desc text18">
+                                            Добавьте товары в корзину, оформите заказ и он появится здесь
+                                        </div>
+                                        <a href="" class="btn-default">
+                                            В каталог товаров
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        <footer class="footer">
+            <div class="subscribe layout">
+                <div class="subs-form max-wrap-flood push-auto">
+
+                    <form class="footerSubscribeForm" onsubmit="return false" method="post">
+
+                        <div class="input-wrap">
+
+                            <div class="label-holder">
+                                <label for="subs"><b>Нравится наша продукция?</b> Подпишитесь и будьте первыми в курсе самых последних событий.</label>
+                            </div>
+
+                            <div class="form-fields">
+
+                                <div class="input-holder">
+                                    <input id="subs" name="email" type="email" placeholder="E-mail">
+                                    <button class="sendButton to___process" data-mob="Ok">Подписаться</button>
+                                </div>
+
+                                <div class="subs-success"><span></span></div>
+                                <div class="subs-error">Введите корректный адрес</div>
+
+                                <p class="error___p" style="margin: 10px 0;"></p>
+
+                                <div class="checkboxes subscribe_checkboxes">
+                                    <input id="footer_subscribe" class="checkbox" type="checkbox" name="footer_subscribe" value="Y">
+                                    <label for="footer_subscribe">Я согласен получать новости и рекламные рассылки <a href="https://shop.marko-shoes.ru/news_agreement/" class="link" target="_blank">Подробнее</a> *</label>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+            <div class="footer-group layout">
+                <div class="footer-row max-wrap-flood push-auto">
+                    <div class="footer-col">
+                        <p>
+                            <a class="footer-logo" href="https://shop.marko-shoes.ru/">
+                                <img src="img/logo.png" alt="Marko">
+                            </a>
+                        </p>
+                        <div>
+                            <p class="copyright">
+                                © <a href="https://shop.marko-shoes.ru/">ООО «Торговый Дом «Марко»</a>, <span class="nobr">2011-2025</span>
+                            </p>
+                            <p>127106, г.Москва, Алтуфьевское шоссе, д. 13к5</p>
+                            <p><a href="https://shop.marko-shoes.ru/about/contacts/"><b>Контактная информация</b></a></p>
+                        </div>
+                        <div>
+                            <p>
+                                По вопросам работы сайта:<br>
+                                <a href="mailto:td@marko.by"><b>td@marko.by</b></a>
+                            </p>
+                        </div>
+
+                        <div class="soc-share">
+                            <div class="soc-share__list">
+                                <div class="soc-share__item">
+                                    <div class="soc-share__item__label">Мы в соц. сетях:</div>
+                                    <div class="soc-share__item__list">
+
+                                        <a href="https://vk.com/marko_shoes" class="vk" target="_blank"><svg class="svg-ico-vkontakte" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 107.585 61.139">
+                                                <path fill="#4b73a4" d="M104.8 51.2c-2.6-2.6-13.2-13.7-13.2-13.7 -1.6-2.1-2.1-4.7-0.5-6.8 3.2-4.2 9-11.6 11.1-14.8 3.2-4.2 9-13.2 1.1-13.2H85.9c-1.6 0-2.6 1.1-3.7 2.1 0 0-6.8 12.6-9 16.8 -5.8 11.6-10 7.9-10 2.6V5.9c0-3.2-2.6-5.8-5.8-5.8H44.3c-3.7-0.5-6.8 1.6-9.5 4.2 0 0 6.8-1.1 6.8 7.9v13.7c0 2.1-1.6 3.7-3.7 3.7 -1.1 0-2.1-0.5-3.2-1.1 -5.3-7.4-10-15.3-13.2-23.7 -0.5-1.1-2.1-2.1-3.2-2.1H2.6C1.1 2.7 0 3.7 0 5.3c0 0.5 0 0.5 0 1.1 4.7 13.2 25.3 54.3 49 54.3h10c2.1 0 3.7-1.6 3.7-3.7v-5.8c0-2.1 1.6-3.7 3.7-3.7 1.1 0 2.1 0.5 2.6 1.1L80.6 59.6c1.1 1.1 2.6 1.6 3.7 1.6h15.8C109.1 60.7 109.1 55.4 104.8 51.2z"></path>
+                                            </svg></a>
+
+                                        <a href="https://www.youtube.com/c/MARKOholding" class="youtube" target="_blank"><span>Youtube</span><svg class="svg-ico-youtube" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 96.9 96.9">
+                                                <path d="M95.2 25.5c-1.2-5.2-5.4-9-10.5-9.5 -12-1.3-24.2-1.3-36.3-1.3 -12.1 0-24.3 0-36.3 1.3 -5.1 0.6-9.3 4.4-10.5 9.5C0 32.9 0 40.9 0 48.4 0 56 0 64 1.7 71.3c1.2 5.2 5.4 9 10.5 9.5 12 1.3 24.2 1.3 36.3 1.3 12.1 0 24.3 0 36.3-1.3 5.1-0.6 9.3-4.4 10.5-9.5 1.7-7.3 1.7-15.3 1.7-22.9C96.9 40.9 96.9 32.9 95.2 25.5zM35.9 63.5c0-10.7 0-21.3 0-32 10.3 5.4 20.5 10.7 30.8 16.1C56.4 52.8 46.2 58.1 35.9 63.5z"></path>
+                                            </svg></a>
+
+                                        <a href="https://t.me/markoshoesru" class="telegram" target="_blank"><span>Telegram</span><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 240 240">
+                                                <circle fill="#282828" r="120" cy="120" cx="120"></circle>
+                                                <path d="M49.942 118.96l80.81-33.295c7.977-3.468 35.03-14.566 35.03-14.566s12.486-4.855 11.445 6.936c-.347 4.855-3.12 21.85-5.896 40.23l-8.67 54.45s-.694 7.977-6.6 9.364-15.607-4.855-17.34-6.243c-1.387-1.04-26.012-16.647-35.03-24.277-2.428-2.08-5.202-6.243.347-11.098 12.486-11.445 27.4-25.665 36.416-34.682 4.162-4.162 8.324-13.873-9.017-2.08l-48.902 32.948s-5.55 3.468-15.954.347-22.543-7.283-22.543-7.283-8.324-5.202 5.896-10.75z"></path>
+                                            </svg></a>
+
+                                        <a href="https://www.tiktok.com/@markoholding" class="telegram" target="_blank"><span>Tiktok</span><svg fill="#000000" width="800px" height="800px" viewBox="0 0 24 24" id="tiktok" data-name="Flat Color" xmlns="http://www.w3.org/2000/svg" class="icon flat-color">
+                                                <path id="primary" d="M21,7V9a1,1,0,0,1-1,1,8,8,0,0,1-4-1.08V15.5A6.5,6.5,0,1,1,6.53,9.72a1,1,0,0,1,1.47.9v2.52a.92.92,0,0,1-.28.62,2.49,2.49,0,0,0,2,4.23A2.61,2.61,0,0,0,12,15.35V3a1,1,0,0,1,1-1h2.11a1,1,0,0,1,1,.83A4,4,0,0,0,20,6,1,1,0,0,1,21,7Z" style="fill: rgb(0, 0, 0);"></path>
+                                            </svg></a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="developer">
+                            <a href="http://astronim.by/" target="_blank">
+                                <span class="developer__label">Разработано –</span>
+                                <span class="developer__logo">Astronim*Support</span>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="footer-col">
+
+
+                        <div class="footer-nav">
+                            <ul class="footer-nav__list">
+
+
+                                <li class="has-drop">
+
+                                    <span class="rub">Каталог</span>
+
+                                    <ul>
+                                        <li>
+                                            <a href="https://shop.marko-shoes.ru/zhenshchinam/"><span>Женщинам</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://shop.marko-shoes.ru/muzhchinam/"><span>Мужчинам</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://shop.marko-shoes.ru/devochkam/"><span>Девочкам</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://shop.marko-shoes.ru/malchikam/"><span>Мальчикам</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://shop.marko-shoes.ru/malysham/"><span>Малышам</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://shop.marko-shoes.ru/aksessuary/"><span>Аксессуары</span></a>
+                                        </li>
+                                    </ul>
+
+                                </li>
+
+
+                                <li class="has-drop">
+
+                                    <span class="rub">Компания</span>
+
+                                    <ul>
+                                        <li>
+                                            <a href="https://www.markoholding.com/about/holding/"><span>О холдинге</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.markoholding.com/assortment/brands/"><span>Портфель брендов</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://shop.marko-shoes.ru/about/net/"><span>Магазины</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://shop.marko-shoes.ru/about/news/"><span>Новости</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://shop.marko-shoes.ru/about/job/"><span>Вакансии</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://shop.marko-shoes.ru/about/contacts/"><span>Контакты</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://shop.marko-shoes.ru/privacy_policy"><span>Политика в отношении обработки персональных данных</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://shop.marko-shoes.ru/agreement_personal_data"><span>Согласие на обработку персональных данных</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://shop.marko-shoes.ru/news_agreement"><span>Согласие на получение новостной и рекламной рассылки</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://shop.marko-shoes.ru/terms_of_use"><span>Пользовательское соглашение</span></a>
+                                        </li>
+                                    </ul>
+
+                                </li>
+
+
+                                <li class="has-drop">
+
+                                    <span class="rub">Покупателям</span>
+
+                                    <ul>
+                                        <li>
+                                            <a href="https://shop.marko-shoes.ru/help/advantages/"><span>Преимущества</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://shop.marko-shoes.ru/help/faq/"><span>Часто задаваемые вопросы</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://shop.marko-shoes.ru/help/sizes/"><span>Размерная таблица</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://shop.marko-shoes.ru/help/warranty/"><span>Гарантии</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://shop.marko-shoes.ru/booking_conditions/"><span>Условия бронирования</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://shop.marko-shoes.ru/help/care/"><span>Уход за обувью</span></a>
+                                        </li>
+                                    </ul>
+
+                                </li>
+
+
+                                <li class="has-drop">
+
+                                    <span class="rub">Специальные предложения</span>
+
+                                    <ul>
+                                        <li>
+                                            <a href="https://shop.marko-shoes.ru/specials/discount/"><span>Балльная программа в фирменной сети</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://shop.marko-shoes.ru/specials/rassrochka/"><span>Карты рассрочки</span></a>
+                                        </li>
+                                    </ul>
+
+                                </li>
+
+
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </footer>
+    </div>
+
+
+    <!--<script src="js/main.popup.bundle.js"></script>-->
+    <script src="js/libs.min.js"></script>
+    <script src="js/owl.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/jquery.noty.packaged.min.js"></script>
+    <script src="js/jquery.maskedinput.js"></script>
+    <script src="js/funcs.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/shop.js"></script>
+    <script src="js/user.js"></script>
+    <script src="js/cookieconsent.js"></script>
+    <script src="js/jstree.min.js"></script>
+    <script src="js/common.js"></script>
+
+
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/air-datepicker.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/fancybox.umd.js"></script>
+    <script src="js/main.min.js"></script>
+
+</body>
+
+</html>
