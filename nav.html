@@ -1497,6 +1497,33 @@
 <body class="m-page">
 
     <div class="m-wrapper" style="padding: 50px;">
+        <a href="orders-history2.html" style="display: block; margin-bottom: 20px;">
+            Заказы
+        </a>
+        <a href="orders-item2.html" style="display: block; margin-bottom: 20px;">
+            Заказ
+        </a>
+        <button data-modal="statusModal" style="border: 2px solid #000;margin-bottom: 20px;">
+            Изменить статус
+        </button>
+        <button data-modal="commentModal" style="border: 2px solid #000;margin-bottom: 20px;">
+            Новый комментарий
+        </button>
+        <button data-modal="orderChangeModal" style="border: 2px solid #000;margin-bottom: 20px;">
+            История заказа
+        </button>
+        <button data-modal="shopModal" style="border: 2px solid #000;margin-bottom: 20px;">
+            Выберите магазин
+        </button>
+        <button data-modal="filterModal" style="border: 2px solid #000;margin-bottom: 20px;">
+            Фильтр
+        </button>
+        <button data-modal="addProductModal" style="border: 2px solid #000;margin-bottom: 20px;">
+            Добавить товар
+        </button>
+
+        <hr style="border-color: #000">
+
         <a href="cart.html" style="display: block; margin-bottom: 20px;">
             Корзина
         </a>
@@ -1575,6 +1602,905 @@
 
 
 
+
+    <div class="m-modal status-modal _resizable-block" id="statusModal">
+        <div class="m-modal__bg modal-bg _close-modal"></div>
+        <div class="m-modal__dialog">
+            <button class="close-btn _close-modal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                    <path d="M18 6.5L6 18.5M6 6.5L18 18.5" stroke="#B2B2B2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+
+            <div class="text34 bold-text">
+                Изменить статус заказа № 236 892 от 19 марта в 20:19
+            </div>
+
+            <div class="status-modal__info">
+                <span class="text18">Текущий статус:</span>
+                <span class="text18 yellow-text2 bold-text">В обработке</span>
+            </div>
+
+            <form action="" class="status-form">
+                <div class="fg fg--type2">
+                    <label>Новый статус</label>
+                    <select>
+                        <option selected hidden disabled>Выберите из списка</option>
+                        <option>Статус</option>
+                        <option>Статус</option>
+                        <option>Статус</option>
+                    </select>
+                </div>
+                <div class="fg fg--type2 _full">
+                    <label>Комментарий к статусу</label>
+                    <textarea placeholder="Оставьте комментарий, если в этом есть необходимость"></textarea>
+                </div>
+                <button class="status-form__btn m-btn m-btn-red _full">
+                    <span>Установить статус</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="m-modal comment-modal _resizable-block" id="commentModal">
+        <div class="m-modal__bg modal-bg _close-modal"></div>
+        <div class="m-modal__dialog">
+            <button class="close-btn _close-modal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                    <path d="M18 6.5L6 18.5M6 6.5L18 18.5" stroke="#B2B2B2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+
+            <div class="text34 bold-text">
+                Новый комментарий
+            </div>
+
+            <form action="" class="status-form">
+                <div class="fg fg--type2 _full">
+                    <label>Новый комментарий</label>
+                    <textarea placeholder="Оставьте комментарий, если в этом есть необходимость"></textarea>
+                </div>
+                <button class="status-form__btn m-btn m-btn-red">
+                    <span>Оставить комментарий</span>
+                </button>
+                <button class="status-form__btn m-btn m-btn-gray-outline">
+                    <span>Отменить</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="m-modal order-change-modal _resizable-block" id="orderChangeModal">
+        <div class="m-modal__bg modal-bg _close-modal"></div>
+        <div class="m-modal__dialog">
+            <button class="close-btn _close-modal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                    <path d="M18 6.5L6 18.5M6 6.5L18 18.5" stroke="#B2B2B2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+
+            <div class="text34 bold-text">
+                История заказа № 236 892 от 19 марта в 20:19
+            </div>
+
+            <div class="changes-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><span class="text15">Дата, время</span></th>
+                            <th><span class="text15">Событие</span></th>
+                            <th><span class="text15">Инициатор</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="text15">20.03.25, 13:30</span></td>
+                            <td><span class="text15">Создан пользователем konstantinopolsky.k@yandex.ru</span></td>
+                            <td><span class="text15 _gray">Система</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="text15">20.03.25, 13:30</span></td>
+                            <td><span class="text15">Взят в обработку</span></td>
+                            <td><span class="text15">Мерцалов К.В.</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="text15">20.03.25, 13:30</span></td>
+                            <td><span class="text15">Создан пользователем konstantinopolsky.k@yandex.ru</span></td>
+                            <td><span class="text15">Система</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="text15">20.03.25, 13:30</span></td>
+                            <td><span class="text15">Взят в обработку</span></td>
+                            <td><span class="text15">Мерцалов К.В.</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="text15">20.03.25, 13:30</span></td>
+                            <td><span class="text15">Создан пользователем konstantinopolsky.k@yandex.ru</span></td>
+                            <td><span class="text15">Система</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="text15">20.03.25, 13:30</span></td>
+                            <td><span class="text15">Взят в обработку</span></td>
+                            <td><span class="text15">Мерцалов К.В.</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="text15">20.03.25, 13:30</span></td>
+                            <td><span class="text15">Создан пользователем konstantinopolsky.k@yandex.ru</span></td>
+                            <td><span class="text15">Система</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="text15">20.03.25, 13:30</span></td>
+                            <td><span class="text15">Взят в обработку</span></td>
+                            <td><span class="text15">Мерцалов К.В.</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="m-modal shop-modal _resizable-block" id="shopModal">
+        <div class="m-modal__bg modal-bg _close-modal"></div>
+        <div class="m-modal__dialog">
+            <button class="close-btn _close-modal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                    <path d="M18 6.5L6 18.5M6 6.5L18 18.5" stroke="#B2B2B2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+
+            <div class="text34 bold-text">
+                Выберите магазин отгрузки для модели
+            </div>
+
+            <div class="shop-modal__info">
+                <div class="shop-modal__img">
+                    <img src="img/product.webp" alt="">
+                </div>
+                <div class="shop-modal__info-text">
+                    <div class="shop-modal__info-title text18 bold-text">
+                        Полуботинки мужские 
+                    </div>
+                    <div class="shop-modal__info-desc text18">
+                        Арт. 300 904
+                    </div>
+                </div>
+            </div>
+
+            <div class="shops-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><span class="text15">Город</span></th>
+                            <th><span class="text15">Магазин</span></th>
+                            <th><span class="text15">Расстояние</span></th>
+                            <th><span class="text15">Остаток пар</span></th>
+                            <th><span class="text15">Действия</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="shop-row">
+                            <td>
+                                <div class="text18">Калуга</div>
+                            </td>
+                            <td>
+                                <div class="shop-row__info">
+                                    <div class="text18 bold-text">
+                                        0127 Калуга ул. Кирова, д.38, пом. 23
+                                    </div>
+                                    <div class="shop-row__desc text12">
+                                        Отделение № 0109 в г.Воронеж филиала ООО "Торговый Дом "Марко"
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="shop-row__mob-title">
+                                    Расстояние:
+                                </div>
+                                <div class="text18">346 Км</div>
+                            </td>
+                            <td>
+                                <div class="shop-row__mob-title">
+                                    Остаток пар:
+                                </div>
+                                <div class="text18">6</div>
+                            </td>
+                            <td>
+                                <button class="shop-row__btn m-btn m-btn-red-outline">
+                                    <span>Выбрать</span>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr class="shop-row">
+                            <td>
+                                <div class="text18">Калуга</div>
+                            </td>
+                            <td>
+                                <div class="shop-row__info">
+                                    <div class="text18 bold-text">
+                                        0127 Калуга ул. Кирова, д.38, пом. 23
+                                    </div>
+                                    <div class="shop-row__desc text12">
+                                        Отделение № 0109 в г.Воронеж филиала ООО "Торговый Дом "Марко"
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="shop-row__mob-title">
+                                    Расстояние:
+                                </div>
+                                <div class="text18">346 Км</div>
+                            </td>
+                            <td>
+                                <div class="shop-row__mob-title">
+                                    Остаток пар:
+                                </div>
+                                <div class="text18">6</div>
+                            </td>
+                            <td>
+                                <button class="shop-row__btn m-btn m-btn-red-outline">
+                                    <span>Выбрать</span>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr class="shop-row">
+                            <td>
+                                <div class="text18">Калуга</div>
+                            </td>
+                            <td>
+                                <div class="shop-row__info">
+                                    <div class="text18 bold-text">
+                                        0127 Калуга ул. Кирова, д.38, пом. 23
+                                    </div>
+                                    <div class="shop-row__desc text12">
+                                        Отделение № 0109 в г.Воронеж филиала ООО "Торговый Дом "Марко"
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="shop-row__mob-title">
+                                    Расстояние:
+                                </div>
+                                <div class="text18">346 Км</div>
+                            </td>
+                            <td>
+                                <div class="shop-row__mob-title">
+                                    Остаток пар:
+                                </div>
+                                <div class="text18">6</div>
+                            </td>
+                            <td>
+                                <button class="shop-row__btn m-btn m-btn-red-outline">
+                                    <span>Выбрать</span>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr class="shop-row">
+                            <td>
+                                <div class="text18">Калуга</div>
+                            </td>
+                            <td>
+                                <div class="shop-row__info">
+                                    <div class="text18 bold-text">
+                                        0127 Калуга ул. Кирова, д.38, пом. 23
+                                    </div>
+                                    <div class="shop-row__desc text12">
+                                        Отделение № 0109 в г.Воронеж филиала ООО "Торговый Дом "Марко"
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="shop-row__mob-title">
+                                    Расстояние:
+                                </div>
+                                <div class="text18">346 Км</div>
+                            </td>
+                            <td>
+                                <div class="shop-row__mob-title">
+                                    Остаток пар:
+                                </div>
+                                <div class="text18">6</div>
+                            </td>
+                            <td>
+                                <button class="shop-row__btn m-btn m-btn-red-outline">
+                                    <span>Выбрать</span>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr class="shop-row">
+                            <td>
+                                <div class="text18">Калуга</div>
+                            </td>
+                            <td>
+                                <div class="shop-row__info">
+                                    <div class="text18 bold-text">
+                                        0127 Калуга ул. Кирова, д.38, пом. 23
+                                    </div>
+                                    <div class="shop-row__desc text12">
+                                        Отделение № 0109 в г.Воронеж филиала ООО "Торговый Дом "Марко"
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="shop-row__mob-title">
+                                    Расстояние:
+                                </div>
+                                <div class="text18">346 Км</div>
+                            </td>
+                            <td>
+                                <div class="shop-row__mob-title">
+                                    Остаток пар:
+                                </div>
+                                <div class="text18">6</div>
+                            </td>
+                            <td>
+                                <button class="shop-row__btn m-btn m-btn-red-outline">
+                                    <span>Выбрать</span>
+                                </button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="m-modal add-product-modal full-modal _resizable-block" id="addProductModal">
+        <div class="m-modal__bg modal-bg _close-modal"></div>
+        <div class="m-modal__dialog">
+            <button class="close-btn _close-modal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M23 1L1 23M1 1L23 23" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+            <div class="text34 bold-text">
+                Добавить к заказу № 236 892 <span class="_no-wrap">от 19 марта в 20:19</span>
+            </div>
+            <button class="add-product-modal__back m-btn m-btn-red-outline">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path class="_stroke" d="M10 12L6 8L10 4" stroke="#EE1C25" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span>Назад к фильтру</span>
+            </button>
+
+            <div class="product-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                <div class="text15 black80-text">Фото</div>
+                            </th>
+                            <th>
+                                <div class="text15 black80-text">Артикул</div>
+                            </th>
+                            <th>
+                                <div class="text15 black80-text">Описание</div>
+                            </th>
+                            <th>
+                                <div class="text15 black80-text">Цвет верха/материал</div>
+                            </th>
+                            <th>
+                                <div class="text15 black80-text">Раззмер</div>
+                            </th>
+                            <th>
+                                <div class="text15 black80-text">Цена, бел.руб</div>
+                            </th>
+                            <th>
+                                <div class="text15 black80-text">Количество</div>
+                            </th>
+                            <th>
+                                <div class="text15 black80-text"></div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="product-row6">
+                            <td>
+                                <div class="product-row6__img">
+                                    <img src="img/product.webp" alt="">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Артикул:
+                                </div>
+                                <div class="text18">
+                                    271374
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Описание:
+                                </div>
+                                <div class="text18">
+                                    Полуботинки
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Цвет верха/материал:
+                                </div>
+                                <div class="text18">
+                                    Серый/Замша
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Размер:
+                                </div>
+                                <div class="fg">
+                                    <select>
+                                        <option selected>43</option>
+                                        <option>44</option>
+                                        <option>45</option>
+                                    </select>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Цена, бел.руб:
+                                </div>
+                                <div class="text18 bold-text">
+                                    203,28
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Количество:
+                                </div>
+                                <div class="text18">
+                                    1
+                                </div>
+                            </td>
+                            <td>
+                                <button class="product-row6__btn m-btn m-btn-red-outline">
+                                    <span>Добавить</span>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr class="product-row6">
+                            <td>
+                                <div class="product-row6__img">
+                                    <img src="img/product.webp" alt="">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Артикул:
+                                </div>
+                                <div class="text18">
+                                    271374
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Описание:
+                                </div>
+                                <div class="text18">
+                                    Полуботинки
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Цвет верха/материал:
+                                </div>
+                                <div class="text18">
+                                    Серый/Замша
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Размер:
+                                </div>
+                                <div class="fg">
+                                    <select>
+                                        <option selected>43</option>
+                                        <option>44</option>
+                                        <option>45</option>
+                                    </select>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Цена, бел.руб:
+                                </div>
+                                <div class="text18 bold-text">
+                                    203,28
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Количество:
+                                </div>
+                                <div class="text18">
+                                    1
+                                </div>
+                            </td>
+                            <td>
+                                <button class="product-row6__btn m-btn m-btn-red-outline">
+                                    <span>Добавить</span>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr class="product-row6">
+                            <td>
+                                <div class="product-row6__img">
+                                    <img src="img/product.webp" alt="">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Артикул:
+                                </div>
+                                <div class="text18">
+                                    271374
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Описание:
+                                </div>
+                                <div class="text18">
+                                    Полуботинки
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Цвет верха/материал:
+                                </div>
+                                <div class="text18">
+                                    Серый/Замша
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Размер:
+                                </div>
+                                <div class="fg">
+                                    <select>
+                                        <option selected>43</option>
+                                        <option>44</option>
+                                        <option>45</option>
+                                    </select>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Цена, бел.руб:
+                                </div>
+                                <div class="text18 bold-text">
+                                    203,28
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Количество:
+                                </div>
+                                <div class="text18">
+                                    1
+                                </div>
+                            </td>
+                            <td>
+                                <button class="product-row6__btn m-btn m-btn-red-outline">
+                                    <span>Добавить</span>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr class="product-row6">
+                            <td>
+                                <div class="product-row6__img">
+                                    <img src="img/product.webp" alt="">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Артикул:
+                                </div>
+                                <div class="text18">
+                                    271374
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Описание:
+                                </div>
+                                <div class="text18">
+                                    Полуботинки
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Цвет верха/материал:
+                                </div>
+                                <div class="text18">
+                                    Серый/Замша
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Размер:
+                                </div>
+                                <div class="fg">
+                                    <select>
+                                        <option selected>43</option>
+                                        <option>44</option>
+                                        <option>45</option>
+                                    </select>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Цена, бел.руб:
+                                </div>
+                                <div class="text18 bold-text">
+                                    203,28
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Количество:
+                                </div>
+                                <div class="text18">
+                                    1
+                                </div>
+                            </td>
+                            <td>
+                                <button class="product-row6__btn m-btn m-btn-red-outline">
+                                    <span>Добавить</span>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr class="product-row6">
+                            <td>
+                                <div class="product-row6__img">
+                                    <img src="img/product.webp" alt="">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Артикул:
+                                </div>
+                                <div class="text18">
+                                    271374
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Описание:
+                                </div>
+                                <div class="text18">
+                                    Полуботинки
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Цвет верха/материал:
+                                </div>
+                                <div class="text18">
+                                    Серый/Замша
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Размер:
+                                </div>
+                                <div class="fg">
+                                    <select>
+                                        <option selected>43</option>
+                                        <option>44</option>
+                                        <option>45</option>
+                                    </select>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Цена, бел.руб:
+                                </div>
+                                <div class="text18 bold-text">
+                                    203,28
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Количество:
+                                </div>
+                                <div class="text18">
+                                    1
+                                </div>
+                            </td>
+                            <td>
+                                <button class="product-row6__btn m-btn m-btn-red-outline">
+                                    <span>Добавить</span>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr class="product-row6">
+                            <td>
+                                <div class="product-row6__img">
+                                    <img src="img/product.webp" alt="">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Артикул:
+                                </div>
+                                <div class="text18">
+                                    271374
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Описание:
+                                </div>
+                                <div class="text18">
+                                    Полуботинки
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Цвет верха/материал:
+                                </div>
+                                <div class="text18">
+                                    Серый/Замша
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Размер:
+                                </div>
+                                <div class="fg">
+                                    <select>
+                                        <option selected>43</option>
+                                        <option>44</option>
+                                        <option>45</option>
+                                    </select>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Цена, бел.руб:
+                                </div>
+                                <div class="text18 bold-text">
+                                    203,28
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Количество:
+                                </div>
+                                <div class="text18">
+                                    1
+                                </div>
+                            </td>
+                            <td>
+                                <button class="product-row6__btn m-btn m-btn-red-outline">
+                                    <span>Добавить</span>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr class="product-row6">
+                            <td>
+                                <div class="product-row6__img">
+                                    <img src="img/product.webp" alt="">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Артикул:
+                                </div>
+                                <div class="text18">
+                                    271374
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Описание:
+                                </div>
+                                <div class="text18">
+                                    Полуботинки
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Цвет верха/материал:
+                                </div>
+                                <div class="text18">
+                                    Серый/Замша
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Размер:
+                                </div>
+                                <div class="fg">
+                                    <select>
+                                        <option selected>43</option>
+                                        <option>44</option>
+                                        <option>45</option>
+                                    </select>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Цена, бел.руб:
+                                </div>
+                                <div class="text18 bold-text">
+                                    203,28
+                                </div>
+                            </td>
+                            <td>
+                                <div class="product-row6__mob-title">
+                                    Количество:
+                                </div>
+                                <div class="text18">
+                                    1
+                                </div>
+                            </td>
+                            <td>
+                                <button class="product-row6__btn m-btn m-btn-red-outline">
+                                    <span>Добавить</span>
+                                </button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="add-product-modal__bottom">
+                <button class="add-product-modal__more m-btn m-btn-red-outline">
+                    <span>Показать еще</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                        <path class="_stroke" d="M4.5 6L8.5 10L12.5 6" stroke="#EE1C25" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="m-modal filter-modal full-modal _resizable-block" id="filterModal">
+        <div class="m-modal__bg modal-bg _close-modal"></div>
+        <div class="m-modal__dialog">
+            <button class="close-btn _close-modal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M23 1L1 23M1 1L23 23" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+            <div class="text34 bold-text">
+                Добавить к заказу № 236 892 <span class="_no-wrap">от 19 марта в 20:19</span>
+            </div>
+
+            <div class="filter-modal__search">
+                <div class="fg fg--type2">
+                    <label>Найти модель обуви</label>
+                    <input type="text" placeholder="Введите название, артикул или серию модели">
+                </div>
+            </div>
+
+            <div class="catalog-filter">
+                Filter
+            </div>
+
+            <div class="catalog-filter__bottom">
+                <button class="catalog-filter__btn m-btn m-btn-red">
+                    <span>Найти товары</span>
+                </button>
+                <div class="text18 bold-text">
+                    Подходит моделей: 135
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="m-modal auth-modal _resizable-block" id="authModal">
         <div class="m-modal__bg modal-bg _close-modal"></div>
